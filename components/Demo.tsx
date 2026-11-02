@@ -256,13 +256,14 @@ export default function Demo() {
           </div>}
           <Calls calls={S.cert.calls} />
         </div>
-        {agent?.ok && <TaskPanel agent={agent} spec={ctx.current.spec} pilotId={pilot?.id} mode={mode} certScore={rarc?.score} />}
+        {agent?.ok && <TaskPanel agent={agent} spec={ctx.current.spec} pilotId={pilot?.id} mode={mode} certScore={rarc?.score} onSwitchSpec={(id) => { const p = presets.find((x) => x.id === id); if (p) { setPresetId(p.id); setText(p.text); window.scrollTo({ top: 0, behavior: "smooth" }); } }} />}
       </div>
     </div>
   );
 }
 
-function TaskPanel({ agent, spec, pilotId, mode, certScore }: { agent: any; spec: any; pilotId?: string; mode: "replay" | "live"; certScore?: number }) {
+function TaskPanel({ agent, spec, pilotId, mode, certScore, onSwitchSpec }: { agent: any; spec: any; pilotId?: string; mode: "replay" | "live"; certScore?: number; onSwitchSpec: (id: string) => void }) {
+  const [parsed, setParsed] = useState<any>(null);
   const tasks = pilotId ? TASKS.filter((t) => t.spec_id === pilotId) : [];
   const [taskId, setTaskId] = useState(tasks[0]?.id ?? "");
   const [free, setFree] = useState("");
@@ -277,7 +278,7 @@ function TaskPanel({ agent, spec, pilotId, mode, certScore }: { agent: any; spec
 
   async function parse() {
     setBusy(true);
-    try { const r = await post("/api/parse-task", { text: free, schema: spec.input_schema }); setInputs(JSON.stringify(r.inputs, null, 1)); setTaskId(""); } catch (e: any) { alert(e.message); }
+    try { const r = await post("/api/parse-task", { text: free, schema: spec.input_schema, spec_text: spec.text, spec_id: pilotId, mode }); setParsed(r); setInputs(JSON.stringify(r.inputs, null, 1)); setTaskId(""); } catch (e: any) { alert(e.message); }
     setBusy(false);
   }
   async function runTask() {
@@ -307,7 +308,8 @@ function TaskPanel({ agent, spec, pilotId, mode, certScore }: { agent: any; spec
         <option value="">Custom inputs</option>
         {tasks.map((t) => <option key={t.id} value={t.id}>{t.id} [{t.split}{t.hard ? ", hard" : ""}] {t.text}</option>)}
       </select>{task?.hard_reason && <div className="mt-2"><span className="badge badge-warn"><Alert size={12} /> Hard case: {task.hard_reason}</span></div>}</div>}
-      <div className="mt-4"><label className="field-label" htmlFor="free">Or describe a task in plain English</label><div className="flex gap-2"><input id="free" type="text" className="flex-1" placeholder="e.g. 2 nights in Jaipur under ₹9,000" value={free} onChange={(e) => setFree(e.target.value)} /><button className="btn" disabled={busy || !free.trim()} onClick={parse}>Parse</button></div></div>
+      <div className="mt-4"><label className="field-label" htmlFor="free">Or describe a task in plain English</label><div className="flex gap-2"><input id="free" type="text" className="flex-1" placeholder="e.g. 2 nights in Jaipur under ₹9,000" value={free} onChange={(e) => setFree(e.target.value)} /><button className="btn" disabled={busy || !free.trim()} onClick={parse}>{busy && !steps.length ? <Loader size={14} /> : <Sparkles size={14} />}Parse</button></div></div>
+      {parsed && <ParseSummary p={parsed} schema={spec.input_schema} onSwitch={onSwitchSpec} />}
       <div className="mt-4"><label className="field-label" htmlFor="inputs">Task inputs (JSON)</label><textarea id="inputs" className="w-full font-mono text-xs" rows={4} value={inputs} onChange={(e) => { setInputs(e.target.value); setTaskId(""); }} /></div>
       <div className="mt-3 flex flex-wrap items-center gap-3"><label className="inline-flex cursor-pointer items-center gap-2 text-sm muted"><input type="checkbox" checked={confirmed} onChange={(e) => setConfirmed(e.target.checked)} /> I confirm side effects (bookings, invites)</label><button className="btn btn-primary ml-auto px-5" disabled={busy} onClick={runTask}>{busy ? <><Loader size={16} /> Running…</> : <><Play size={14} /> Run task</>}</button></div>
 
@@ -322,7 +324,7 @@ function TaskPanel({ agent, spec, pilotId, mode, certScore }: { agent: any; spec
         {res.run.error_message && !res.view && <div className="mt-2 text-xs" style={{ color: "var(--bad)" }}>{res.run.error_message}</div>}
         {res.view && <ResultCard view={res.view} />}
         {(res.run.answer || res.run.raw) && <RawJson value={res.run.answer ?? res.run.raw} open={!res.view} />}
-        {res.run.raw?.success_indicators && Object.keys(res.run.raw.success_indicators).length > 0 && <div className="mt-2 text-xs faint">Indicators: {JSON.stringify(res.run.raw.success_indicators).slice(0, 300)}</div>}
+        {!res.view && res.run.raw?.success_indicators && Object.keys(res.run.raw.success_indicators).length > 0 && <div className="mt-2 text-xs faint">Indicators: {JSON.stringify(res.run.raw.success_indicators).slice(0, 300)}</div>}
         {res.check && <div className="mt-3 rounded-xl border p-3" style={{ borderColor: "var(--border)" }}><div className="field-label">Checker</div><ul className="space-y-1 text-[13px]">{res.check.checks.map((c: any) => <li key={c.name} className="flex items-start gap-2"><span className="mt-0.5"><StatusIcon ok={c.ok} size={13} /></span><span>{c.name}{c.detail ? <span className="faint"> ({c.detail})</span> : null}</span></li>)}</ul>
           <div className="mt-2 text-xs faint">Expected {res.check.expected_status}{res.truth?.value !== undefined && res.truth?.value !== null ? ` · truth ${res.truth.value} ${res.truth.unit}` : ""}{res.truth?.earliest ? ` · earliest ${res.truth.earliest}` : ""}{res.truth?.min_cost ? ` · cheapest plan ₹${res.truth.min_cost}` : ""}</div></div>}
         <div className="mt-4 flex gap-2"><input type="text" className="flex-1" aria-label="Flag note" placeholder="Something wrong? Flag this run with a note" value={flagNote} onChange={(e) => setFlagNote(e.target.value)} /><button className="btn" disabled={flagged} onClick={flag}><Flag size={14} /> {flagged ? "Flagged" : "Flag"}</button></div>
@@ -362,6 +364,24 @@ function RawJson({ value, open: initial }: { value: any; open: boolean }) {
         <Chevron size={12} style={{ transform: open ? "rotate(90deg)" : undefined, transition: "transform .15s" }} />{open ? "Hide" : "Show"} raw JSON returned by the agent
       </button>
       {open && <pre className="code mt-2 max-h-56">{JSON.stringify(value, null, 2)}</pre>}
+    </div>
+  );
+}
+
+function ParseSummary({ p, schema, onSwitch }: { p: any; schema: any[]; onSwitch: (id: string) => void }) {
+  const fmt = (v: any) => (Array.isArray(v) ? v.join(", ") : typeof v === "number" && v >= 1000 ? v.toLocaleString("en-IN") : String(v));
+  return (
+    <div className="fade-in mt-3 space-y-2.5 rounded-xl border p-3.5 text-[13px]" style={{ borderColor: "var(--border)" }}>
+      <div className="field-label !mb-0">How the request was understood</div>
+      <div className="flex flex-wrap gap-1.5">
+        {p.stated.map((k: string) => <span key={k} className="badge badge-good"><Check size={11} />{k}: {fmt(p.inputs[k])}</span>)}
+        {p.assumptions.map((a: any) => <span key={a.field} className="badge badge-warn" title={a.reason}>assumed {a.field}: {fmt(a.value)}</span>)}
+      </div>
+      {p.assumptions.length > 0 && <ul className="space-y-0.5 text-xs muted">{p.assumptions.map((a: any) => <li key={a.field}><b>{a.field}</b>: {a.reason}. Edit the JSON below to change it.</li>)}</ul>}
+      {p.missing.length > 0 && <div className="rounded-lg p-2.5" style={{ background: "var(--bad-soft)" }}><div className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: "var(--bad)" }}><Alert size={13} />Still needed before running</div><ul className="mt-1 list-disc pl-5 text-xs">{p.missing.map((m: any) => <li key={m.field}>{m.question}</li>)}</ul></div>}
+      {p.unsupported.length > 0 && <div className="rounded-lg p-2.5" style={{ background: "var(--warn-soft)" }}><div className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: "var(--warn)" }}><Alert size={13} />This agent can't use</div><ul className="mt-1 list-disc pl-5 text-xs">{p.unsupported.map((u: string) => <li key={u}>{u}</li>)}</ul>
+        {schema.length > 0 && <div className="mt-1 text-[11px] faint">It only takes: {schema.map((f) => f.name).join(", ")}.</div>}</div>}
+      {p.suggested_spec && <div className="flex flex-wrap items-center gap-2 rounded-lg p-2.5" style={{ background: "var(--accent-soft)" }}><Sparkles size={14} style={{ color: "var(--accent)" }} /><span className="text-xs"><b>{p.suggested_spec.id} · {p.suggested_spec.title}</b> fits this request better: {p.suggested_spec.reason}</span><button className="btn btn-sm ml-auto" onClick={() => onSwitch(p.suggested_spec.id)}>Use that agent</button></div>}
     </div>
   );
 }

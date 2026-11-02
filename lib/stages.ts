@@ -173,8 +173,88 @@ ${guide}`;
 }
 
 // ------------------------------ task parsing (demo) ------------------------------
-export async function parseTask(text: string, schema: InputField[], calls: LlmCall[]) {
-  const sys = `Extract structured task inputs from the user's request. Schema:\n${schema.map((f) => `- ${f.name}: ${f.type}${f.required ? "" : " (optional)"} — ${f.description}`).join("\n")}\nToday is ${new Date().toISOString().slice(0, 10)}. Use UTC ISO 'YYYY-MM-DDTHH:mmZ' for datetimes. Omit fields the user did not give (do not invent). Return JSON {"inputs":{...}}.`;
+// Turns a free-form request into task inputs for the assembled agent. Beyond extraction it:
+// normalises values, fills required fields with *declared* sensible defaults, asks only when no
+// default is reasonable, reports requirements the agent's schema cannot express, and suggests a
+// better-fitting pilot agent. Output is validated and coerced against the schema in code.
+export interface ParsedTask {
+  inputs: Record<string, any>;
+  stated: string[];
+  assumptions: { field: string; value: any; reason: string }[];
+  missing: { field: string; question: string }[];
+  unsupported: string[];
+  suggested_spec: { id: string; title: string; reason: string } | null;
+}
+
+function nextDow(now: string, dow: number) { const t = new Date(now + "T00:00:00Z"); const d = (dow - t.getUTCDay() + 7) % 7 || 7; t.setUTCDate(t.getUTCDate() + d); return t.toISOString().slice(0, 10); }
+function addWorkdays(now: string, n: number) { const t = new Date(now + "T00:00:00Z"); let k = 0; while (k < n) { t.setUTCDate(t.getUTCDate() + 1); if (t.getUTCDay() % 6 !== 0) k++; } return t.toISOString().slice(0, 10); }
+
+function defaultsFor(schema: InputField[], inputs: Record<string, any>, text: string, now: string): [string, any, string][] {
+  const out: [string, any, string][] = [];
+  const has = (k: string) => inputs[k] !== undefined;
+  const wide = /\b(explore|entire|entirety|whole|all of|everything|full)\b/i.test(text);
+  for (const f of schema) {
+    if (!f.required || has(f.name)) continue;
+    const n = f.name;
+    if (n === "checkin" || (n === "date" && !schema.some((x) => x.name === "origin"))) out.push([n, nextDow(now, 6), "no date given, so the coming Saturday"]);
+    else if (n === "date") out.push([n, nextDow(now, 6), "no travel date given, so the coming Saturday"]);
+    else if (n === "nights") out.push([n, wide ? 2 : 1, wide ? "you want to explore the whole city, so 2 nights" : "no length given, so a 1-night trip"]);
+    else if (n === "days") out.push([n, 3, "no horizon given, so the next 3 days"]);
+    else if (n === "count") out.push([n, 3, "no number given, so 3"]);
+    else if (n === "duration_minutes") out.push([n, 60, "no length given, so a 1-hour meeting"]);
+    else if (n === "window_start") out.push([n, addWorkdays(now, 1) + "T00:00Z", "no window given, so from the next working day"]);
+    else if (n === "window_end") out.push([n, addWorkdays(now, 5) + "T23:59Z", "no window given, so through the next 5 working days"]);
+    else if (n === "unit") out.push([n, "mm", "no unit given, so millimetres"]);
+  }
+  return out;
+}
+
+function coerce(v: any, type: string): any {
+  if (v === null || v === undefined || v === "") return undefined;
+  if (type === "number" || type === "integer") {
+    const n = typeof v === "number" ? v : Number(String(v).replace(/[,₹\s]|rs\.?|inr/gi, "").replace(/k$/i, "000"));
+    if (!isFinite(n)) return undefined;
+    return type === "integer" ? Math.round(n) : n;
+  }
+  if (type === "array") return Array.isArray(v) ? v.map((x) => String(x).trim().toLowerCase()).filter(Boolean) : String(v).split(/[,;]| and /).map((x) => x.trim().toLowerCase()).filter(Boolean);
+  if (type === "boolean") return typeof v === "boolean" ? v : /^(true|yes|1)$/i.test(String(v));
+  return String(v).trim();
+}
+
+export async function parseTask(text: string, schema: InputField[], calls: LlmCall[], ctx: { specText?: string; now?: string; catalog?: { id: string; title: string; text: string }[] } = {}): Promise<ParsedTask> {
+  const now = ctx.now ?? new Date().toISOString().slice(0, 10);
+  const dow = new Date(now + "T00:00:00Z").toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
+  const sys = `You convert a user's free-form request into the task inputs of an already-built agent.
+
+AGENT SPEC: ${ctx.specText ?? "(not given)"}
+INPUT SCHEMA:
+${schema.map((f) => `- ${f.name}: ${f.type}${f.required ? " (required)" : " (optional)"} — ${f.description}`).join("\n")}
+Today is ${dow} ${now}. Supported cities: Pune, Mumbai, Delhi, Bengaluru, Goa, Jaipur, Chennai, Kolkata, Hyderabad, Kochi. People: alice, bob, carol, frank (India), dave, heidi (London), erin, grace (New York).
+
+Rules:
+1. Extract every value the user states. Normalise: canonical English city names ("Bangalore" -> "Bengaluru"), money to plain numbers ("10,000 rs", "10k" -> 10000), relative dates to YYYY-MM-DD ("this weekend" -> the coming Saturday), datetimes to UTC 'YYYY-MM-DDTHH:mmZ', usernames lower-case. Put these field names in "stated".
+2. For a REQUIRED field the user did not state, choose a sensible default a reasonable person would accept and explain it in "assumptions" (e.g. checkin = the coming Saturday; nights = 2 when they want to explore a whole city, 1 for a quick trip; days = 3 for "the next few days"; duration_minutes = 60 for "a meeting"; a window of the next 5 working days). Never invent a budget, a city or people; if such a field is missing, add it to "missing" with one short question instead.
+3. List in "unsupported" every requirement the user expressed that the input schema cannot represent (e.g. party size, dietary needs of part of the group, "explore everything"), phrased so the user understands what the agent will ignore.
+4. If one agent in the CATALOG clearly fits the request better than this agent, return its id and a one-line reason in "suggested_spec"; otherwise null.
+CATALOG:
+${(ctx.catalog ?? []).map((c) => `- ${c.id} ${c.title}: ${c.text}`).join("\n")}
+
+Return JSON only: {"inputs":{...},"stated":[field],"assumptions":[{"field":str,"value":any,"reason":str}],"missing":[{"field":str,"question":str}],"unsupported":[str],"suggested_spec":{"id":str,"reason":str}|null}`;
   const r = await complete("task_parse", [{ role: "system", content: sys }, { role: "user", content: text }], { json: true, calls, stage: "task_parse" });
-  return (r.json?.inputs ?? {}) as Record<string, any>;
+  const j = r.json ?? {};
+  const raw = j.inputs && typeof j.inputs === "object" ? j.inputs : {};
+  const inputs: Record<string, any> = {};
+  for (const f of schema) { const v = coerce(raw[f.name], f.type); if (v !== undefined) inputs[f.name] = v; }
+  const known = new Set(schema.map((f) => f.name));
+  const assumptions = (Array.isArray(j.assumptions) ? j.assumptions : []).filter((a: any) => a && known.has(a.field) && inputs[a.field] !== undefined).map((a: any) => ({ field: String(a.field), value: inputs[a.field], reason: String(a.reason ?? "") }));
+  // deterministic defaults for required fields the model left empty (never budget / city / people)
+  for (const [field, value, reason] of defaultsFor(schema, inputs, text, now)) { inputs[field] = value; assumptions.push({ field, value, reason }); }
+  const missingLLM = (Array.isArray(j.missing) ? j.missing : []).filter((m: any) => m && known.has(m.field) && inputs[m.field] === undefined);
+  // anything required that is still empty is missing, even if the model forgot to say so
+  const missing = schema.filter((f) => f.required && inputs[f.name] === undefined).map((f) => ({ field: f.name, question: String(missingLLM.find((m: any) => m.field === f.name)?.question ?? `What ${f.name.replace(/_/g, " ")} should the agent use? (${f.description})`) }));
+  const assumed = new Set(assumptions.map((a: { field: string }) => a.field));
+  const stated = Object.keys(inputs).filter((k) => !assumed.has(k));
+  const sid = j.suggested_spec?.id;
+  const sug = sid ? ctx.catalog?.find((c) => c.id === sid) : undefined;
+  return { inputs, stated, assumptions, missing, unsupported: (Array.isArray(j.unsupported) ? j.unsupported : []).map(String).slice(0, 6), suggested_spec: sug ? { id: sug.id, title: sug.title, reason: String(j.suggested_spec.reason ?? "") } : null };
 }

@@ -14,7 +14,7 @@ export interface Route { provider: Provider; model: string; temperature: number;
 export const ROUTES: Record<Role, { primary: Route; fallback: Route }> = {
   intake: { primary: { provider: "groq", model: "openai/gpt-oss-20b", temperature: 0, max_tokens: 1500 }, fallback: { provider: "gemini", model: "gemini-3.5-flash-lite", temperature: 0, max_tokens: 1500 } },
   rerank: { primary: { provider: "groq", model: "openai/gpt-oss-20b", temperature: 0, max_tokens: 1500 }, fallback: { provider: "gemini", model: "gemini-3.5-flash-lite", temperature: 0, max_tokens: 1500 } },
-  task_parse: { primary: { provider: "groq", model: "openai/gpt-oss-20b", temperature: 0, max_tokens: 800 }, fallback: { provider: "gemini", model: "gemini-3.5-flash-lite", temperature: 0, max_tokens: 800 } },
+  task_parse: { primary: { provider: "groq", model: "openai/gpt-oss-120b", temperature: 0, max_tokens: 1500 }, fallback: { provider: "groq", model: "openai/gpt-oss-20b", temperature: 0, max_tokens: 1500 } },
   // gemini-3.5-flash free tier is 20 requests/day: v1 code generation runs on Groq gpt-oss-120b (frozen after the quota hit)
   codegen: { primary: { provider: "groq", model: "openai/gpt-oss-120b", temperature: 0.2, max_tokens: 6000 }, fallback: { provider: "gemini", model: "gemini-2.5-flash", temperature: 0.2, max_tokens: 8000 } },
   codegen_alt: { primary: { provider: "gemini", model: "gemini-3.5-flash-lite", temperature: 0.9, max_tokens: 8000 }, fallback: { provider: "groq", model: "openai/gpt-oss-20b", temperature: 0.9, max_tokens: 6000 } },
