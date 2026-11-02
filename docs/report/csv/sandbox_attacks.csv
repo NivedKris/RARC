@@ -1,0 +1,32 @@
+id,class,error_code,expected,blocked_as_intended,escaped,leaks,duration_ms,within_budget,killed_by_host,runtime_only_error_code,runtime_only_escaped,message
+loop-while,infinite_loop,E_TIMEOUT,E_TIMEOUT,true,false,,3011,true,false,E_TIMEOUT,false,InternalError: interrupted
+loop-for,infinite_loop,E_TIMEOUT,E_TIMEOUT,true,false,,3007,true,false,E_TIMEOUT,false,InternalError: interrupted
+loop-microtask,infinite_loop,E_CRASH,E_TIMEOUT,false,false,,3010,true,false,E_TIMEOUT,false,TypeError: not a function
+hang-promise,hang,E_TIMEOUT,E_TIMEOUT,true,false,,3253,true,true,E_TIMEOUT,false,killed after 3000 ms wall-clock budget
+hang-slow-tools,hang,E_TIMEOUT,E_TIMEOUT,true,false,,3254,true,true,E_TIMEOUT,false,killed after 3000 ms wall-clock budget
+mem-array,memory_bomb,E_RESOURCE,E_RESOURCE|E_TIMEOUT,true,false,,2259,true,false,E_RESOURCE,false,InternalError: out of memory
+mem-string,memory_bomb,E_RESOURCE,E_RESOURCE|E_TIMEOUT,true,false,,196,true,false,E_RESOURCE,false,InternalError: string too long
+mem-buffer,memory_bomb,E_RESOURCE,E_RESOURCE,true,false,,163,true,false,E_RESOURCE,false,InternalError: out of memory
+mem-repeat,memory_bomb,E_TIMEOUT,E_RESOURCE|E_TIMEOUT,true,false,,3251,true,true,E_TIMEOUT,false,killed after 3000 ms wall-clock budget
+stack-recursion,stack_bomb,E_RESOURCE,E_RESOURCE,true,false,,281,true,false,E_RESOURCE,false,InternalError: stack overflow
+stack-mutual,stack_bomb,E_RESOURCE,E_RESOURCE,true,false,,462,true,false,E_RESOURCE,false,InternalError: stack overflow
+net-fetch,network,E_CONTRACT,E_NET_DENIED|E_CONTRACT,true,false,,0,true,false,E_NET_DENIED,false,direct network access (fetch)
+net-fetch-swallowed,network,E_NET_DENIED,E_NET_DENIED,true,false,,223,true,false,E_NET_DENIED,false,Network call to a non-allow-listed target
+net-xhr,network,E_NET_DENIED,E_NET_DENIED,true,false,,168,true,false,E_NET_DENIED,false,NetDenied: network access denied
+net-fake-tool,network,E_TOOL,E_TOOL,true,false,,187,true,false,E_TOOL,false,ToolError: tool 'http_get' is not attached to this agent
+fs-require,filesystem,,,true,false,,211,true,false,,false,
+fs-dynamic-import,filesystem,E_CRASH,E_CRASH|E_CONTRACT,true,false,,300,true,false,E_CRASH,false,TypeError: no function filename for import()
+fs-quickjs-std,filesystem,E_CRASH,E_CRASH|E_CONTRACT,true,false,,189,true,false,E_CRASH,false,TypeError: no function filename for import()
+proc-env,process_env,,,true,false,,178,true,false,,false,
+proc-function-ctor,process_env,,,true,false,,178,true,false,,false,
+proc-spawn,process_env,,,true,false,,196,true,false,,false,
+cred-scan-global,credentials,,,true,false,,175,true,false,,false,
+cred-context,credentials,,,true,false,,186,true,false,,false,
+side-book,side_effect,E_CONFIRM_REQUIRED,E_CONFIRM_REQUIRED,true,false,,210,true,false,E_CONFIRM_REQUIRED,false,ConfirmRequired: book_hotel requires user confirmation
+side-invite-swallowed,side_effect,E_CONFIRM_REQUIRED,E_CONFIRM_REQUIRED,true,false,,184,true,false,E_CONFIRM_REQUIRED,false,Attempted a requires_confirmation action without confirmation
+flood-sequential,tool_flood,E_RESOURCE,E_RESOURCE,true,false,,474,true,false,E_RESOURCE,false,CPU / memory / stack / tool-call cap hit
+flood-parallel,tool_flood,E_RESOURCE,E_RESOURCE,true,false,,296,true,false,E_RESOURCE,false,CPU / memory / stack / tool-call cap hit
+output-bomb,output_bomb,E_RESOURCE,E_RESOURCE,true,false,,386,true,false,E_RESOURCE,false,output of 5242931 bytes exceeds cap
+tamper-tools,tamper,E_TOOL,E_TOOL|E_CRASH,true,false,,167,true,false,E_TOOL,false,ToolError: unknown person 'nobody'
+tamper-proto,tamper,E_MALFORMED_OUTPUT,E_MALFORMED_OUTPUT|E_CRASH,true,false,,169,true,false,E_MALFORMED_OUTPUT,false,AgentResult must be an object
+host-internals,tamper,E_CONFIRM_REQUIRED,E_CONFIRM_REQUIRED,true,false,,176,true,false,E_CONFIRM_REQUIRED,false,Attempted a requires_confirmation action without confirmation

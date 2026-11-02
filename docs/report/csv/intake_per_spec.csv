@@ -1,0 +1,31 @@
+id,ambiguous,gold_category,pred_category,confidence,asked_clarification,clarifying_question,gold_capabilities,pred_capabilities,latency_ms,model
+P01,false,C1,C1,0.9,false,,hotel_search attraction_search,geocoding hotel_search attraction_search currency_conversion,1159,openai/gpt-oss-20b
+P02,false,C1,C1,0.9,false,,flight_search hotel_search,geocoding flight_search hotel_search,2420,openai/gpt-oss-20b
+P03,false,C1,C1,0.7,false,How many nights should the hotel stay be?,flight_search train_search hotel_search,geocoding flight_search train_search hotel_search,2620,openai/gpt-oss-20b
+P04,false,C1,C1,0.9,false,,restaurant_search,restaurant_search,2849,openai/gpt-oss-20b
+P05,false,C1,C1,0.95,false,,hotel_search attraction_search restaurant_search,geocoding hotel_search attraction_search restaurant_search,3156,openai/gpt-oss-20b
+P06,false,C2,C2,0.9,false,,geocoding weather_forecast,geocoding weather_forecast,3105,openai/gpt-oss-20b
+P07,false,C2,C2,0.95,false,,geocoding weather_forecast,geocoding weather_forecast,2856,openai/gpt-oss-20b
+P08,false,C2,C2,0.95,false,,geocoding weather_forecast,geocoding weather_forecast,2952,openai/gpt-oss-20b
+P09,false,C2,C2,0.95,false,,hotel_search currency_conversion,geocoding hotel_search currency_conversion,2915,openai/gpt-oss-20b
+P10,false,C2,C2,0.95,false,,geocoding air_quality,geocoding air_quality,2819,openai/gpt-oss-20b
+P11,false,C3,C3,0.95,false,,calendar_lookup person_profile,calendar_lookup person_profile,3131,openai/gpt-oss-20b
+P12,false,C3,C3,0.9,false,,calendar_lookup person_profile,calendar_lookup person_profile send_invite,2854,openai/gpt-oss-20b
+P13,false,C3,C3,0.95,false,,calendar_lookup person_profile public_holidays,calendar_lookup person_profile public_holidays,8159,openai/gpt-oss-20b
+P14,false,C3,C3,0.9,false,,calendar_lookup person_profile send_invite,calendar_lookup person_profile send_invite,16388,openai/gpt-oss-20b
+P15,false,C3,C3,0.9,false,,calendar_lookup person_profile,calendar_lookup person_profile,1919,gemini-3.5-flash-lite
+X01,false,C4,C4,0.95,false,,flight_search train_search,geocoding flight_search train_search currency_conversion,4197,openai/gpt-oss-20b
+X02,false,C4,C4,0.95,false,,hotel_search,geocoding hotel_search currency_conversion,6736,openai/gpt-oss-20b
+X03,false,C2,C2,0.95,false,,geocoding elevation,geocoding elevation,8308,openai/gpt-oss-20b
+X04,false,C2,C2,0.95,false,,geocoding sun_times,sun_times,10407,openai/gpt-oss-20b
+X05,false,C1,C1,0.55,true,"Could you provide the departure and arrival locations, as well as the travel dates, so I can search for flights, trains, and hotels within your budget?",flight_search train_search hotel_search,flight_search train_search hotel_search,10297,openai/gpt-oss-20b
+X06,false,C3,C3,0.95,false,,calendar_lookup person_profile,calendar_lookup person_profile,12194,openai/gpt-oss-20b
+X07,false,C2,C2,0.95,false,,geocoding air_quality,air_quality,11834,openai/gpt-oss-20b
+X08,false,C1,C1,0.9,false,,hotel_search hotel_booking,hotel_search hotel_booking,1573,gemini-3.5-flash-lite
+X09,false,C2,C2,0.95,false,,hotel_search currency_conversion,geocoding hotel_search currency_conversion,4688,openai/gpt-oss-20b
+A01,true,,C1,0.4,true,"What specific travel tasks would you like the agent to help with (e.g., booking flights, finding hotels, planning itineraries, etc.)?",,,5620,openai/gpt-oss-20b
+A02,true,,C3,0.4,true,What specific things or time slots are you trying to check for the team each week?,,calendar_lookup person_profile,1396,gemini-3.5-flash-lite
+A03,true,,C2,0.4,true,"Do you want the forecast for a specific date or for the current day, and should the location be specified by name or coordinates?",,geocoding weather_forecast,2145,openai/gpt-oss-20b
+A04,true,,C1,0.55,true,"What type of options should the assistant suggest (e.g., hotels, flights, restaurants, or a mix) and what location or destination should it consider?",,hotel_search flight_search restaurant_search,4161,openai/gpt-oss-20b
+A05,true,,C3,0.55,true,What are the participants' identifiers and the desired meeting duration?,,calendar_lookup person_profile,6253,openai/gpt-oss-20b
+A06,true,,C2,0.4,true,"What specific pricing task do you need the bot to perform (e.g., currency conversion, price comparison, cost estimation, etc.)?",,,7519,openai/gpt-oss-20b

@@ -1,0 +1,7 @@
+10:47:53 A intake on 30 specs
+10:49:38 B retrieval on 24 specs (3 runs)
+10:55:17 C wrapper synthesis on 4 APIs
+10:55:23    frankfurter true repairs 0 ok
+10:55:25    nager true repairs 0 ok
+10:55:26    elevation true repairs 0 ok
+10:55:29    sunrise true repairs 0 ok

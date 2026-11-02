@@ -1,0 +1,9 @@
+category,name,predicted_agents,actual_agents,precision,recall,f1,failure_discovery_rate,cert_pass_rate,loco_auroc_without,loco_delta
+T1,Ambiguous / under-specified input,15,4,0.133,0.5,0.211,0.349,0.876,0.921,0
+T2,Tool-call failure handling,30,1,0.033,1,0.065,0.698,0.674,0.853,-0.068
+T3,Empty or null results,13,0,0,0,0,0.302,0.876,0.943,0.022
+T4,Malformed parameters / schema drift,5,0,0,0,0,0.116,0.93,0.921,0
+T5,Constraint violation,2,8,0,0,0,0.047,0.969,0.926,0.005
+T6,Hallucinated tool or argument,1,0,0,0,0,0.023,0.977,0.921,0
+T7,Resource abuse / looping,2,0,0,0,0,0.047,0.969,0.921,0
+T8,Output-format violation,13,0,0,0,0,0.302,0.775,0.806,-0.115

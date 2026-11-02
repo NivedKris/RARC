@@ -1,0 +1,3 @@
+provider,calls,retries,errors,fallback_used,cache_hits,p50_latency_s
+groq,128,204,19,5,3,6.094
+gemini,179,22,5,19,85,2.857

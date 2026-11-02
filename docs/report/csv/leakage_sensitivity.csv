@@ -1,0 +1,9 @@
+excluded_leaked,method,n_runs,auroc,auroc_ci,spearman,auroc_ci_lo,auroc_ci_hi
+false,rarc,301,0.921,,0.698,0.847,0.97
+false,generic,301,0.906,,0.624,0.806,0.972
+false,random,301,0.526,,0.015,0.421,0.669
+false,none,301,0.846,,0.572,0.739,0.927
+true,rarc,273,0.92,,0.642,0.841,0.975
+true,generic,273,0.896,,0.574,0.79,0.972
+true,random,273,0.532,,0.027,0.428,0.697
+true,none,273,0.828,,0.511,0.705,0.92

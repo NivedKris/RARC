@@ -1,0 +1,4 @@
+comparison,d_auroc,d_auroc_ci_lo,d_auroc_ci_hi,p_auroc,d_spearman,d_spearman_ci_lo,d_spearman_ci_hi,p_spearman
+rarc_vs_generic,0.014,-0.036,0.073,0.278,0.074,-0.073,0.202,0.23
+rarc_vs_random,0.394,0.256,0.504,0,0.683,0.249,0.976,0.001
+rarc_vs_none,0.075,-0.003,0.161,0.029,0.125,-0.04,0.254,0.087

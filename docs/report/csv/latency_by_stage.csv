@@ -1,0 +1,6 @@
+stage,p50,p95
+intake,3.144,12.032
+retrieval (embed + re-rank),6.728,16.456
+code generation (incl. repairs),10.681,59.712
+certification run (rarc tests),3.199,4.594
+task execution (sandbox),0.46,0.867

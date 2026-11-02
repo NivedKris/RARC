@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "next": "16.4.3",
+    "quickjs-emscripten": "^0.32.0",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "tsx": "^4.23.15"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",

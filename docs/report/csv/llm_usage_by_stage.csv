@@ -1,0 +1,10 @@
+stage,calls,live_calls,tokens_in,tokens_out,providers
+intake,33,33,17080,6736,groq:openai/gpt-oss-20b gemini:gemini-3.5-flash-lite
+retrieval_embed,72,23,1488,0,gemini:gemini-embedding-001
+rerank,83,82,37710,17173,groq:openai/gpt-oss-20b gemini:gemini-3.5-flash-lite
+wrapper_synthesis,4,4,2726,493,gemini:gemini-3.5-flash
+codegen,54,53,42208,77369,gemini:gemini-3.5-flash gemini:gemini-3.5-flash-lite groq:openai/gpt-oss-20b groq:openai/gpt-oss-120b
+codegen_repair,7,7,22587,12792,gemini:gemini-3.5-flash-lite groq:openai/gpt-oss-20b gemini:gemini-3.5-flash groq:openai/gpt-oss-120b
+testgen_rarc,30,5,31046,55647,gemini:gemini-3.5-flash-lite
+testgen_generic,15,5,10063,44203,gemini:gemini-3.5-flash-lite
+taxonomy_tagging,9,7,14943,2982,groq:openai/gpt-oss-120b gemini:gemini-3.5-flash-lite

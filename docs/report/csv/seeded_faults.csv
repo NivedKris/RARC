@@ -1,0 +1,51 @@
+agent_id,fault,fault_name,targets,rarc_detected,rarc_new_failures,rarc_score,rarc_base_score,generic_detected,generic_new_failures,generic_score,generic_base_score,random_detected,random_new_failures,random_score,random_base_score
+P01-v1,F1,crashes on empty results,T3,false,0,0.9166666666666666,0.9166666666666666,false,0,0.875,0.875,false,0,1,1
+P01-v1,F2,does not handle tool errors,T2,true,5,0.7083333333333334,0.9166666666666666,true,2,0.7916666666666666,0.875,false,0,1,1
+P01-v1,F3,retries forever on errors,T7,true,2,0.875,0.9166666666666666,false,0,0.875,0.875,false,0,1,1
+P01-v1,F4,breaks on schema drift,T4,true,4,0.7916666666666666,0.9166666666666666,true,9,0.5,0.875,false,0,1,1
+P01-v1,F5,assumes inputs are complete,T1,true,1,0.875,0.9166666666666666,false,0,0.875,0.875,true,12,0.5,1
+P02-v1,F1,crashes on empty results,T3,false,0,0.9583333333333333,0.9583333333333333,false,0,0.7083333333333334,0.7083333333333334,false,0,1,1
+P02-v1,F2,does not handle tool errors,T2,true,3,0.8333333333333334,0.9583333333333333,true,1,0.6666666666666666,0.7083333333333334,false,0,1,1
+P02-v1,F3,retries forever on errors,T7,true,2,0.9166666666666666,0.9583333333333333,false,0,0.7083333333333334,0.7083333333333334,false,0,1,1
+P02-v1,F4,breaks on schema drift,T4,true,4,0.7916666666666666,0.9583333333333333,true,15,0.08333333333333333,0.7083333333333334,false,0,1,1
+P02-v1,F5,assumes inputs are complete,T1,true,1,0.9166666666666666,0.9583333333333333,false,0,0.7083333333333334,0.7083333333333334,true,18,0.25,1
+P03-v1,F1,crashes on empty results,T3,false,0,1,1,false,0,0.875,0.875,false,0,1,1
+P03-v1,F2,does not handle tool errors,T2,true,9,0.625,1,true,2,0.7916666666666666,0.875,true,5,0.7916666666666666,1
+P03-v1,F3,retries forever on errors,T7,true,3,0.8749999999999999,1,false,0,0.875,0.875,false,0,1,1
+P03-v1,F4,breaks on schema drift,T4,true,5,0.7916666666666666,1,true,18,0.125,0.875,false,0,1,1
+P03-v1,F5,assumes inputs are complete,T1,true,1,0.9583333333333333,1,false,0,0.875,0.875,true,17,0.2916666666666667,1
+P04-v1,F1,crashes on empty results,T3,false,0,1,1,false,0,0.6666666666666666,0.6666666666666666,false,0,1,1
+P04-v1,F2,does not handle tool errors,T2,true,5,0.7916666666666666,1,false,0,0.6666666666666666,0.6666666666666666,false,0,1,1
+P04-v1,F3,retries forever on errors,T7,true,2,0.9166666666666666,1,false,0,0.6666666666666666,0.6666666666666666,false,0,1,1
+P04-v1,F4,breaks on schema drift,T4,false,0,1,1,false,0,0.6666666666666666,0.6666666666666666,false,0,1,1
+P04-v1,F5,assumes inputs are complete,T1,true,1,0.9583333333333333,1,false,0,0.6666666666666666,0.6666666666666666,true,13,0.4583333333333333,1
+P05-v1,F1,crashes on empty results,T3,false,0,1,1,false,0,1,1,false,0,1,1
+P05-v1,F2,does not handle tool errors,T2,true,6,0.7500000000000001,1,true,2,0.9130434782608695,1,false,0,1,1
+P05-v1,F3,retries forever on errors,T7,true,2,0.9166666666666666,1,false,0,1,1,false,0,1,1
+P05-v1,F4,breaks on schema drift,T4,true,5,0.7916666666666666,1,true,11,0.5217391304347826,1,false,0,1,1
+P05-v1,F5,assumes inputs are complete,T1,true,1,0.9583333333333333,1,true,1,0.9565217391304348,1,true,18,0.25,1
+P06-v3,F1,crashes on empty results,T3,false,0,0.9583333333333333,0.9166666666666666,false,0,1,1,false,0,1,1
+P06-v3,F2,does not handle tool errors,T2,true,4,0.7499999999999999,0.9166666666666666,false,0,1,1,false,0,1,1
+P06-v3,F3,retries forever on errors,T7,true,3,0.8333333333333333,0.9166666666666666,false,0,1,1,false,0,1,1
+P06-v3,F4,breaks on schema drift,T4,false,0,0.9166666666666666,0.9166666666666666,false,0,1,1,false,0,1,1
+P06-v3,F5,assumes inputs are complete,T1,true,1,0.875,0.9166666666666666,false,0,1,1,true,12,0.5,1
+P07-v1,F1,crashes on empty results,T3,false,0,0.9583333333333333,0.9583333333333333,false,0,1,1,false,0,1,1
+P07-v1,F2,does not handle tool errors,T2,true,3,0.8333333333333334,0.9583333333333333,false,0,1,1,false,0,1,1
+P07-v1,F3,retries forever on errors,T7,true,2,0.9166666666666666,0.9583333333333333,false,0,1,1,false,0,1,1
+P07-v1,F4,breaks on schema drift,T4,false,0,0.9583333333333333,0.9583333333333333,false,0,1,1,false,0,1,1
+P07-v1,F5,assumes inputs are complete,T1,true,1,0.9166666666666666,0.9583333333333333,false,0,1,1,true,13,0.4583333333333333,1
+P08-v1,F1,crashes on empty results,T3,false,0,1,1,false,0,1,1,false,0,1,1
+P08-v1,F2,does not handle tool errors,T2,true,5,0.7916666666666666,1,false,0,1,1,false,0,1,1
+P08-v1,F3,retries forever on errors,T7,true,3,0.8749999999999999,1,false,0,1,1,false,0,1,1
+P08-v1,F4,breaks on schema drift,T4,false,0,1,1,false,0,1,1,false,0,1,1
+P08-v1,F5,assumes inputs are complete,T1,true,1,0.9583333333333333,1,false,0,1,1,true,17,0.2916666666666667,1
+P09-v1,F1,crashes on empty results,T3,false,0,0.9166666666666666,0.9166666666666666,false,0,0.9583333333333334,0.9583333333333334,false,0,1,1
+P09-v1,F2,does not handle tool errors,T2,true,5,0.7083333333333333,0.9166666666666666,true,3,0.8333333333333334,0.9583333333333334,false,0,1,1
+P09-v1,F3,retries forever on errors,T7,true,2,0.875,0.9166666666666666,false,0,0.9583333333333334,0.9583333333333334,false,0,1,1
+P09-v1,F4,breaks on schema drift,T4,true,4,0.7916666666666666,0.9166666666666666,true,17,0.25,0.9583333333333334,false,0,1,1
+P09-v1,F5,assumes inputs are complete,T1,true,1,0.875,0.9166666666666666,false,0,0.9583333333333334,0.9583333333333334,true,12,0.5,1
+P10-v1,F1,crashes on empty results,T3,false,0,1,0.9583333333333333,false,0,1,1,false,0,1,0.9583333333333334
+P10-v1,F2,does not handle tool errors,T2,true,6,0.7083333333333333,0.9583333333333333,false,0,1,1,false,0,1,0.9583333333333334
+P10-v1,F3,retries forever on errors,T7,true,3,0.8333333333333334,0.9583333333333333,false,0,1,1,false,0,1,0.9583333333333334
+P10-v1,F4,breaks on schema drift,T4,false,0,1,0.9583333333333333,false,0,1,1,false,0,1,0.9583333333333334
+P10-v1,F5,assumes inputs are complete,T1,true,1,0.9166666666666666,0.9583333333333333,false,0,1,1,true,11,0.5416666666666666,0.9583333333333334

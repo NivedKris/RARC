@@ -1,0 +1,100 @@
+10:56:42 D assembly:  15 specs x 3 variants
+10:56:46    P02-v2 ok gemini-3.5-flash-lite repairs 0 
+10:56:46    P01-v2 ok gemini-3.5-flash-lite repairs 0 
+10:56:49    P03-v2 ok gemini-3.5-flash-lite repairs 0 
+10:56:50    P02-v3 ok openai/gpt-oss-20b repairs 0 
+10:56:50    P01-v3 ok openai/gpt-oss-20b repairs 0 
+10:56:52    P03-v3 ok openai/gpt-oss-20b repairs 0 
+10:56:53    P04-v2 ok gemini-3.5-flash-lite repairs 0 
+10:56:54    P02-v1 ok gemini-3.5-flash repairs 0 
+10:56:56    P03-v1 ok gemini-3.5-flash repairs 0 
+10:56:57    P04-v1 ok gemini-3.5-flash repairs 0 
+10:56:57    P05-v2 ok gemini-3.5-flash-lite repairs 0 
+10:57:01    P06-v2 ok gemini-3.5-flash-lite repairs 0 
+10:57:03    P05-v1 ok gemini-3.5-flash repairs 0 
+10:57:03    P04-v3 ok openai/gpt-oss-20b repairs 0 
+10:57:05    P01-v1 ok gemini-3.5-flash repairs 0 
+10:57:06    P07-v2 ok gemini-3.5-flash-lite repairs 0 
+10:57:17    P06-v3 ok openai/gpt-oss-20b repairs 0 
+10:57:19    P07-v1 ok openai/gpt-oss-120b repairs 0 
+10:57:20    P08-v2 ok gemini-3.5-flash-lite repairs 0 
+10:57:22    P08-v1 ok openai/gpt-oss-120b repairs 0 
+10:57:25    P09-v2 ok gemini-3.5-flash-lite repairs 0 
+10:57:30    P09-v1 ok gemini-3.5-flash repairs 0 
+10:57:31    P05-v3 ok gemini-3.5-flash-lite repairs 0 
+10:57:31    P09-v3 ok openai/gpt-oss-20b repairs 0 
+10:57:34    P10-v2 ok gemini-3.5-flash-lite repairs 0 
+10:57:34    P06-v1 ok gemini-3.5-flash repairs 0 
+10:57:38    P10-v1 ok gemini-3.5-flash repairs 0 
+10:57:49    P10-v3 ok openai/gpt-oss-20b repairs 0 
+10:57:50    P11-v2 FAIL gemini-3.5-flash-lite repairs 2 touches the global object
+10:57:50    P12-v2 ok gemini-3.5-flash-lite repairs 0 
+10:57:51    P11-v1 ok gemini-3.5-flash repairs 0 
+10:57:57    P07-v3 ok gemini-3.5-flash-lite repairs 0 
+10:58:03    P11-v3 ok openai/gpt-oss-20b repairs 0 
+10:58:05    P13-v2 ok gemini-3.5-flash-lite repairs 0 
+10:58:16    P12-v1 ok gemini-3.5-flash repairs 0 
+10:58:20    P08-v3 ok gemini-3.5-flash-lite repairs 0 
+10:58:21    P14-v2 ok gemini-3.5-flash-lite repairs 0 
+10:58:24    P14-v1 ok openai/gpt-oss-120b repairs 0 
+10:58:24    P14-v3 ok openai/gpt-oss-20b repairs 0 
+10:58:26    P13-v1 ok openai/gpt-oss-120b repairs 1 
+10:58:39    P15-v2 FAIL gemini-3.5-flash-lite repairs 2 touches the global object
+10:58:46    P15-v3 ok openai/gpt-oss-20b repairs 0 
+10:58:50    P15-v1 ok openai/gpt-oss-120b repairs 0 
+10:59:07    P13-v3 ok gemini-3.5-flash-lite repairs 0 
+10:59:29    P12-v3 ok openai/gpt-oss-20b repairs 1 
+10:59:29 E test generation
+11:00:20    P01 rarc 24 / 24 generic 24 random 18
+11:00:26    P03 rarc 24 / 24 generic 24 random 22
+11:00:27    P02 rarc 24 / 24 generic 24 random 21
+11:01:19    P04 rarc 24 / 24 generic 24 random 19
+11:01:25    P05 rarc 24 / 24 generic 24 random 14
+11:01:36    P06 rarc 24 / 24 generic 24 random 11
+11:02:19    P08 rarc 24 / 24 generic 24 random 18
+11:02:26    P07 rarc 24 / 24 generic 24 random 19
+11:02:41    P09 rarc 24 / 24 generic 24 random 16
+11:03:20    P10 rarc 24 / 24 generic 23 random 18
+11:03:26    P11 rarc 24 / 24 generic 24 random 19
+11:03:41    P12 rarc 24 / 24 generic 24 random 21
+11:04:21    P13 rarc 24 / 24 generic 24 random 19
+11:04:23    P14 rarc 24 / 24 generic 18 random 19
+11:04:38    P15 rarc 24 / 24 generic 24 random 19
+11:04:38 F certification + task runs for 45 agents
+11:04:54    P01-v2 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:04:55    P01-v1 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:04:57    P01-v3 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:11    P02-v1 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:12    P02-v2 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:14    P02-v3 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:28    P03-v1 rarc 0.88 generic 1.00 random 1.00 TSR 1.00
+11:05:28    P03-v2 rarc 0.88 generic 1.00 random 1.00 TSR 0.14
+11:05:30    P03-v3 rarc 0.88 generic 1.00 random 1.00 TSR 1.00
+11:05:42    P04-v1 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:42    P04-v2 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:45    P04-v3 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:56    P05-v1 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:05:56    P05-v2 rarc 1.00 generic 1.00 random 1.00 TSR 0.86
+11:05:58    P05-v3 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:06:09    P06-v2 rarc 0.96 generic 1.00 random 1.00 TSR 0.86
+11:06:09    P06-v1 rarc 0.96 generic 1.00 random 1.00 TSR 0.86
+11:06:11    P06-v3 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:06:23    P07-v1 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:06:24    P07-v2 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:06:25    P07-v3 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:06:37    P08-v1 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:06:38    P08-v2 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:06:39    P08-v3 rarc 1.00 generic 1.00 random 1.00 TSR 1.00
+11:06:59    P09-v1 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:07:00    P09-v2 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:07:00    P09-v3 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:07:15    P10-v1 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:07:15    P10-v3 rarc 0.96 generic 1.00 random 1.00 TSR 1.00
+11:07:15    P11-v2 rarc 0.00 generic 0.00 random 0.00 TSR 0.00
+11:07:15    P10-v2 rarc 0.00 generic 0.00 random 0.00 TSR 1.00
+11:07:35    P11-v1 rarc 0.96 generic 0.96 random 1.00 TSR 1.00
+11:07:36    P11-v3 rarc 0.96 generic 0.96 random 1.00 TSR 0.29
+11:07:36    P12-v1 rarc 0.96 generic 0.96 random 1.00 TSR 1.00
+11:07:49    P12-v2 rarc 0.96 generic 0.96 random 1.00 TSR 0.14
+11:07:50    P12-v3 rarc 0.96 generic 0.96 random 1.00 TSR 1.00
+11:07:59    P13-v1 rarc 1.00 generic 0.92 random 1.00 TSR 0.29

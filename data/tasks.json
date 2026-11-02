@@ -1,0 +1,2785 @@
+{
+ "hash": "2d19cad5917e61cf",
+ "created": "2026-11-02T10:38:51.984Z",
+ "tasks": [
+  {
+   "id": "P01-T01",
+   "spec_id": "P01",
+   "split": "heldout",
+   "hard": false,
+   "text": "Plan 2 night(s) in Pune from 2026-11-13 with two attractions, total under ₹4,700.",
+   "inputs": {
+    "city": "Pune",
+    "checkin": "2026-11-13",
+    "nights": 2,
+    "budget": 4700
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3100,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T02",
+   "spec_id": "P01",
+   "split": "dev",
+   "hard": false,
+   "text": "Plan 1 night(s) in Mumbai from 2026-11-14 with two attractions, total under ₹7,500.",
+   "inputs": {
+    "city": "Mumbai",
+    "checkin": "2026-11-14",
+    "nights": 1,
+    "budget": 7500
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 5700,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T03",
+   "spec_id": "P01",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "null entry fees",
+   "text": "Plan 2 night(s) in Delhi from 2026-11-20 with two attractions, total under ₹5,500.",
+   "inputs": {
+    "city": "Delhi",
+    "checkin": "2026-11-20",
+    "nights": 2,
+    "budget": 5500
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3900,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T04",
+   "spec_id": "P01",
+   "split": "dev",
+   "hard": false,
+   "text": "Plan 3 night(s) in Bengaluru from 2026-11-21 with two attractions, total under ₹13,300.",
+   "inputs": {
+    "city": "Bengaluru",
+    "checkin": "2026-11-21",
+    "nights": 3,
+    "budget": 13300
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 7350,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T05",
+   "spec_id": "P01",
+   "split": "heldout",
+   "hard": false,
+   "text": "Plan 2 night(s) in Chennai from 2026-11-27 with two attractions, total under ₹9,900.",
+   "inputs": {
+    "city": "Chennai",
+    "checkin": "2026-11-27",
+    "nights": 2,
+    "budget": 9900
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 8200,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T06",
+   "spec_id": "P01",
+   "split": "heldout",
+   "hard": false,
+   "text": "Plan 1 night(s) in Hyderabad from 2026-11-15 with two attractions, total under ₹4,400.",
+   "inputs": {
+    "city": "Hyderabad",
+    "checkin": "2026-11-15",
+    "nights": 1,
+    "budget": 4400
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 2700,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T07",
+   "spec_id": "P01",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "flaky provider (503 on first call)",
+   "text": "Plan 2 night(s) in Jaipur from 2026-11-22 with two attractions, total under ₹6,000.",
+   "inputs": {
+    "city": "Jaipur",
+    "checkin": "2026-11-22",
+    "nights": 2,
+    "budget": 6000
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 4600,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T08",
+   "spec_id": "P01",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "string prices + tight budget",
+   "text": "Plan 2 night(s) in Kochi from 2026-11-18 with two attractions, total under ₹4,100.",
+   "inputs": {
+    "city": "Kochi",
+    "checkin": "2026-11-18",
+    "nights": 2,
+    "budget": 4100
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3900,
+    "note": ""
+   }
+  },
+  {
+   "id": "P01-T09",
+   "spec_id": "P01",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "infeasible budget",
+   "text": "Plan 1 night(s) in Goa from 2026-11-28 with two attractions, total under ₹2,400.",
+   "inputs": {
+    "city": "Goa",
+    "checkin": "2026-11-28",
+    "nights": 1,
+    "budget": 2400
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": 2700,
+    "note": "cheapest plan costs 2700"
+   }
+  },
+  {
+   "id": "P01-T10",
+   "spec_id": "P01",
+   "split": "heldout",
+   "hard": false,
+   "text": "Plan 2 night(s) in Kolkata from 2026-11-12 with two attractions, total under ₹7,500.",
+   "inputs": {
+    "city": "Kolkata",
+    "checkin": "2026-11-12",
+    "nights": 2,
+    "budget": 7500
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 4980,
+    "note": ""
+   }
+  },
+  {
+   "id": "P02-T01",
+   "spec_id": "P02",
+   "split": "heldout",
+   "hard": false,
+   "text": "Business trip Pune → Delhi on 2026-11-16, 2 night(s), hotel rated ≥ 4, under ₹19,900.",
+   "inputs": {
+    "origin": "Pune",
+    "city": "Delhi",
+    "date": "2026-11-16",
+    "nights": 2,
+    "min_rating": 4,
+    "budget": 19900
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 14200,
+    "note": ""
+   }
+  },
+  {
+   "id": "P02-T02",
+   "spec_id": "P02",
+   "split": "dev",
+   "hard": false,
+   "text": "Business trip Mumbai → Bengaluru on 2026-11-17, 1 night(s), hotel rated ≥ 3.5, under ₹14,300.",
+   "inputs": {
+    "origin": "Mumbai",
+    "city": "Bengaluru",
+    "date": "2026-11-17",
+    "nights": 1,
+    "min_rating": 3.5,
+    "budget": 14300
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 10950,
+    "note": ""
+   }
+  },
+  {
+   "id": "P02-T03",
+   "spec_id": "P02",
+   "split": "heldout",
+   "hard": false,
+   "text": "Business trip Delhi → Mumbai on 2026-11-18, 3 night(s), hotel rated ≥ 4, under ₹15,000.",
+   "inputs": {
+    "origin": "Delhi",
+    "city": "Mumbai",
+    "date": "2026-11-18",
+    "nights": 3,
+    "min_rating": 4,
+    "budget": 15000
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": null,
+    "note": "not enough flight options"
+   }
+  },
+  {
+   "id": "P02-T04",
+   "spec_id": "P02",
+   "split": "dev",
+   "hard": false,
+   "text": "Business trip Chennai → Hyderabad on 2026-11-19, 2 night(s), hotel rated ≥ 3, under ₹12,500.",
+   "inputs": {
+    "origin": "Chennai",
+    "city": "Hyderabad",
+    "date": "2026-11-19",
+    "nights": 2,
+    "min_rating": 3,
+    "budget": 12500
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": null,
+    "note": "not enough flight options"
+   }
+  },
+  {
+   "id": "P02-T05",
+   "spec_id": "P02",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "high rating bar, missing ratings",
+   "text": "Business trip Kolkata → Delhi on 2026-11-23, 2 night(s), hotel rated ≥ 4.5, under ₹13,000.",
+   "inputs": {
+    "origin": "Kolkata",
+    "city": "Delhi",
+    "date": "2026-11-23",
+    "nights": 2,
+    "min_rating": 4.5,
+    "budget": 13000
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": null,
+    "note": "not enough flight options"
+   }
+  },
+  {
+   "id": "P02-T06",
+   "spec_id": "P02",
+   "split": "heldout",
+   "hard": false,
+   "text": "Business trip Bengaluru → Pune on 2026-11-24, 1 night(s), hotel rated ≥ 3.5, under ₹9,600.",
+   "inputs": {
+    "origin": "Bengaluru",
+    "city": "Pune",
+    "date": "2026-11-24",
+    "nights": 1,
+    "min_rating": 3.5,
+    "budget": 9600
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 5950,
+    "note": ""
+   }
+  },
+  {
+   "id": "P02-T07",
+   "spec_id": "P02",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "flaky hotel provider",
+   "text": "Business trip Hyderabad → Jaipur on 2026-11-25, 2 night(s), hotel rated ≥ 3.5, under ₹17,700.",
+   "inputs": {
+    "origin": "Hyderabad",
+    "city": "Jaipur",
+    "date": "2026-11-25",
+    "nights": 2,
+    "min_rating": 3.5,
+    "budget": 17700
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 13550,
+    "note": ""
+   }
+  },
+  {
+   "id": "P02-T08",
+   "spec_id": "P02",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "string prices + tight budget",
+   "text": "Business trip Delhi → Goa on 2026-11-26, 2 night(s), hotel rated ≥ 4, under ₹8,900.",
+   "inputs": {
+    "origin": "Delhi",
+    "city": "Goa",
+    "date": "2026-11-26",
+    "nights": 2,
+    "min_rating": 4,
+    "budget": 8900
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 8400,
+    "note": ""
+   }
+  },
+  {
+   "id": "P02-T09",
+   "spec_id": "P02",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "infeasible budget",
+   "text": "Business trip Pune → Chennai on 2026-11-30, 2 night(s), hotel rated ≥ 4, under ₹10,400.",
+   "inputs": {
+    "origin": "Pune",
+    "city": "Chennai",
+    "date": "2026-11-30",
+    "nights": 2,
+    "min_rating": 4,
+    "budget": 10400
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": 11250,
+    "note": "cheapest plan costs 11250"
+   }
+  },
+  {
+   "id": "P02-T10",
+   "spec_id": "P02",
+   "split": "heldout",
+   "hard": false,
+   "text": "Business trip Mumbai → Kolkata on 2026-11-20, 2 night(s), hotel rated ≥ 3.5, under ₹14,900.",
+   "inputs": {
+    "origin": "Mumbai",
+    "city": "Kolkata",
+    "date": "2026-11-20",
+    "nights": 2,
+    "min_rating": 3.5,
+    "budget": 14900
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 10600,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T01",
+   "spec_id": "P03",
+   "split": "heldout",
+   "hard": false,
+   "text": "Cheapest getaway Mumbai → Pune on 2026-11-20 (train or flight) plus 2 night(s) of hotel, under ₹5,400.",
+   "inputs": {
+    "origin": "Mumbai",
+    "city": "Pune",
+    "date": "2026-11-20",
+    "nights": 2,
+    "budget": 5400
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3800,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T02",
+   "spec_id": "P03",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "flaky hotel provider",
+   "text": "Cheapest getaway Delhi → Jaipur on 2026-11-21 (train or flight) plus 1 night(s) of hotel, under ₹5,600.",
+   "inputs": {
+    "origin": "Delhi",
+    "city": "Jaipur",
+    "date": "2026-11-21",
+    "nights": 1,
+    "budget": 5600
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 4250,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T03",
+   "spec_id": "P03",
+   "split": "heldout",
+   "hard": false,
+   "text": "Cheapest getaway Chennai → Bengaluru on 2026-11-14 (train or flight) plus 2 night(s) of hotel, under ₹8,400.",
+   "inputs": {
+    "origin": "Chennai",
+    "city": "Bengaluru",
+    "date": "2026-11-14",
+    "nights": 2,
+    "budget": 8400
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 5600,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T04",
+   "spec_id": "P03",
+   "split": "dev",
+   "hard": false,
+   "text": "Cheapest getaway Pune → Hyderabad on 2026-11-15 (train or flight) plus 2 night(s) of hotel, under ₹7,500.",
+   "inputs": {
+    "origin": "Pune",
+    "city": "Hyderabad",
+    "date": "2026-11-15",
+    "nights": 2,
+    "budget": 7500
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 6250,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T05",
+   "spec_id": "P03",
+   "split": "heldout",
+   "hard": false,
+   "text": "Cheapest getaway Kolkata → Chennai on 2026-11-16 (train or flight) plus 3 night(s) of hotel, under ₹21,700.",
+   "inputs": {
+    "origin": "Kolkata",
+    "city": "Chennai",
+    "date": "2026-11-16",
+    "nights": 3,
+    "budget": 21700
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 13550,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T06",
+   "spec_id": "P03",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "string prices + tight budget",
+   "text": "Cheapest getaway Bengaluru → Kochi on 2026-11-17 (train or flight) plus 2 night(s) of hotel, under ₹6,200.",
+   "inputs": {
+    "origin": "Bengaluru",
+    "city": "Kochi",
+    "date": "2026-11-17",
+    "nights": 2,
+    "budget": 6200
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 5950,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T07",
+   "spec_id": "P03",
+   "split": "heldout",
+   "hard": false,
+   "text": "Cheapest getaway Hyderabad → Mumbai on 2026-11-18 (train or flight) plus 1 night(s) of hotel, under ₹9,800.",
+   "inputs": {
+    "origin": "Hyderabad",
+    "city": "Mumbai",
+    "date": "2026-11-18",
+    "nights": 1,
+    "budget": 9800
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 6500,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T08",
+   "spec_id": "P03",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "infeasible budget",
+   "text": "Cheapest getaway Delhi → Kolkata on 2026-11-19 (train or flight) plus 2 night(s) of hotel, under ₹5,200.",
+   "inputs": {
+    "origin": "Delhi",
+    "city": "Kolkata",
+    "date": "2026-11-19",
+    "nights": 2,
+    "budget": 5200
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": 5500,
+    "note": "cheapest plan costs 5500"
+   }
+  },
+  {
+   "id": "P03-T09",
+   "spec_id": "P03",
+   "split": "dev",
+   "hard": false,
+   "text": "Cheapest getaway Goa → Pune on 2026-11-27 (train or flight) plus 2 night(s) of hotel, under ₹10,200.",
+   "inputs": {
+    "origin": "Goa",
+    "city": "Pune",
+    "date": "2026-11-27",
+    "nights": 2,
+    "budget": 10200
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 7800,
+    "note": ""
+   }
+  },
+  {
+   "id": "P03-T10",
+   "spec_id": "P03",
+   "split": "heldout",
+   "hard": false,
+   "text": "Cheapest getaway Jaipur → Delhi on 2026-11-28 (train or flight) plus 1 night(s) of hotel, under ₹5,500.",
+   "inputs": {
+    "origin": "Jaipur",
+    "city": "Delhi",
+    "date": "2026-11-28",
+    "nights": 1,
+    "budget": 5500
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3900,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T01",
+   "spec_id": "P04",
+   "split": "heldout",
+   "hard": false,
+   "text": "Pick 3 vegetarian restaurants in Bengaluru with combined cost-for-two under ₹5,600.",
+   "inputs": {
+    "city": "Bengaluru",
+    "count": 3,
+    "budget": 5600
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 4300,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T02",
+   "spec_id": "P04",
+   "split": "dev",
+   "hard": false,
+   "text": "Pick 2 vegetarian restaurants in Pune with combined cost-for-two under ₹4,000.",
+   "inputs": {
+    "city": "Pune",
+    "count": 2,
+    "budget": 4000
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 2650,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T03",
+   "spec_id": "P04",
+   "split": "heldout",
+   "hard": false,
+   "text": "Pick 3 vegetarian restaurants in Mumbai with combined cost-for-two under ₹9,300.",
+   "inputs": {
+    "city": "Mumbai",
+    "count": 3,
+    "budget": 9300
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 7700,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T04",
+   "spec_id": "P04",
+   "split": "dev",
+   "hard": false,
+   "text": "Pick 2 vegetarian restaurants in Delhi with combined cost-for-two under ₹5,200.",
+   "inputs": {
+    "city": "Delhi",
+    "count": 2,
+    "budget": 5200
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 2850,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T05",
+   "spec_id": "P04",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "only one veg restaurant (infeasible)",
+   "text": "Pick 3 vegetarian restaurants in Kolkata with combined cost-for-two under ₹15,000.",
+   "inputs": {
+    "city": "Kolkata",
+    "count": 3,
+    "budget": 15000
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": null,
+    "note": "not enough restaurant options"
+   }
+  },
+  {
+   "id": "P04-T06",
+   "spec_id": "P04",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "tight budget",
+   "text": "Pick 4 vegetarian restaurants in Chennai with combined cost-for-two under ₹7,500.",
+   "inputs": {
+    "city": "Chennai",
+    "count": 4,
+    "budget": 7500
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 7300,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T07",
+   "spec_id": "P04",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "infeasible budget",
+   "text": "Pick 2 vegetarian restaurants in Hyderabad with combined cost-for-two under ₹2,500.",
+   "inputs": {
+    "city": "Hyderabad",
+    "count": 2,
+    "budget": 2500
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": 2800,
+    "note": "cheapest plan costs 2800"
+   }
+  },
+  {
+   "id": "P04-T08",
+   "spec_id": "P04",
+   "split": "heldout",
+   "hard": false,
+   "text": "Pick 3 vegetarian restaurants in Jaipur with combined cost-for-two under ₹5,000.",
+   "inputs": {
+    "city": "Jaipur",
+    "count": 3,
+    "budget": 5000
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3550,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T09",
+   "spec_id": "P04",
+   "split": "dev",
+   "hard": false,
+   "text": "Pick 2 vegetarian restaurants in Kochi with combined cost-for-two under ₹1,100.",
+   "inputs": {
+    "city": "Kochi",
+    "count": 2,
+    "budget": 1100
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 800,
+    "note": ""
+   }
+  },
+  {
+   "id": "P04-T10",
+   "spec_id": "P04",
+   "split": "heldout",
+   "hard": false,
+   "text": "Pick 1 vegetarian restaurants in Goa with combined cost-for-two under ₹1,400.",
+   "inputs": {
+    "city": "Goa",
+    "count": 1,
+    "budget": 1400
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 700,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T01",
+   "spec_id": "P05",
+   "split": "heldout",
+   "hard": false,
+   "text": "Family outing in Chennai on 2026-11-21: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹6,900.",
+   "inputs": {
+    "city": "Chennai",
+    "checkin": "2026-11-21",
+    "budget": 6900
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 5250,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T02",
+   "spec_id": "P05",
+   "split": "dev",
+   "hard": false,
+   "text": "Family outing in Pune on 2026-11-14: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹4,200.",
+   "inputs": {
+    "city": "Pune",
+    "checkin": "2026-11-14",
+    "budget": 4200
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 2750,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T03",
+   "spec_id": "P05",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "null entry fees",
+   "text": "Family outing in Delhi on 2026-11-15: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹4,700.",
+   "inputs": {
+    "city": "Delhi",
+    "checkin": "2026-11-15",
+    "budget": 4700
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3300,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T04",
+   "spec_id": "P05",
+   "split": "dev",
+   "hard": false,
+   "text": "Family outing in Bengaluru on 2026-11-22: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹3,600.",
+   "inputs": {
+    "city": "Bengaluru",
+    "checkin": "2026-11-22",
+    "budget": 3600
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 2950,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T05",
+   "spec_id": "P05",
+   "split": "heldout",
+   "hard": false,
+   "text": "Family outing in Mumbai on 2026-11-28: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹17,600.",
+   "inputs": {
+    "city": "Mumbai",
+    "checkin": "2026-11-28",
+    "budget": 17600
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 10950,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T06",
+   "spec_id": "P05",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "string prices + tight budget",
+   "text": "Family outing in Goa on 2026-11-29: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹3,400.",
+   "inputs": {
+    "city": "Goa",
+    "checkin": "2026-11-29",
+    "budget": 3400
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3300,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T07",
+   "spec_id": "P05",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "flaky provider",
+   "text": "Family outing in Jaipur on 2026-11-20: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹4,700.",
+   "inputs": {
+    "city": "Jaipur",
+    "checkin": "2026-11-20",
+    "budget": 4700
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3300,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T08",
+   "spec_id": "P05",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "infeasible budget",
+   "text": "Family outing in Hyderabad on 2026-11-13: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹5,400.",
+   "inputs": {
+    "city": "Hyderabad",
+    "checkin": "2026-11-13",
+    "budget": 5400
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "min_cost": 5950,
+    "note": "cheapest plan costs 5950"
+   }
+  },
+  {
+   "id": "P05-T09",
+   "spec_id": "P05",
+   "split": "dev",
+   "hard": false,
+   "text": "Family outing in Kochi on 2026-11-27: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹5,700.",
+   "inputs": {
+    "city": "Kochi",
+    "checkin": "2026-11-27",
+    "budget": 5700
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 3800,
+    "note": ""
+   }
+  },
+  {
+   "id": "P05-T10",
+   "spec_id": "P05",
+   "split": "heldout",
+   "hard": false,
+   "text": "Family outing in Kolkata on 2026-11-16: veg-friendly hotel (1 night), 1 attraction, 1 veg restaurant, under ₹6,000.",
+   "inputs": {
+    "city": "Kolkata",
+    "checkin": "2026-11-16",
+    "budget": 6000
+   },
+   "truth": {
+    "expected_status": "success",
+    "min_cost": 4000,
+    "note": ""
+   }
+  },
+  {
+   "id": "P06-T01",
+   "spec_id": "P06",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average daily high in °F for Pune over the next 5 day(s).",
+   "inputs": {
+    "city": "Pune",
+    "days": 5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 86.72,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T02",
+   "spec_id": "P06",
+   "split": "dev",
+   "hard": false,
+   "text": "Average daily high in °F for Mumbai over the next 3 day(s).",
+   "inputs": {
+    "city": "Mumbai",
+    "days": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 93.38,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T03",
+   "spec_id": "P06",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average daily high in °F for Delhi over the next 7 day(s).",
+   "inputs": {
+    "city": "Delhi",
+    "days": 7
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 83.89,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T04",
+   "spec_id": "P06",
+   "split": "dev",
+   "hard": false,
+   "text": "Average daily high in °F for Bengaluru over the next 10 day(s).",
+   "inputs": {
+    "city": "Bengaluru",
+    "days": 10
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 81.09,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T05",
+   "spec_id": "P06",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average daily high in °F for Chennai over the next 1 day(s).",
+   "inputs": {
+    "city": "Chennai",
+    "days": 1
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 79.88,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T06",
+   "spec_id": "P06",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "max horizon",
+   "text": "Average daily high in °F for Hyderabad over the next 16 day(s).",
+   "inputs": {
+    "city": "Hyderabad",
+    "days": 16
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 85.6,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T07",
+   "spec_id": "P06",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "ambiguous name (Kochi, Japan)",
+   "text": "Average daily high in °F for Kochi over the next 5 day(s).",
+   "inputs": {
+    "city": "Kochi",
+    "days": 5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 85.68,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T08",
+   "spec_id": "P06",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average daily high in °F for Jaipur over the next 4 day(s).",
+   "inputs": {
+    "city": "Jaipur",
+    "days": 4
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 85.24,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T09",
+   "spec_id": "P06",
+   "split": "dev",
+   "hard": false,
+   "text": "Average daily high in °F for Kolkata over the next 6 day(s).",
+   "inputs": {
+    "city": "Kolkata",
+    "days": 6
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 85.25,
+    "unit": "F"
+   }
+  },
+  {
+   "id": "P06-T10",
+   "spec_id": "P06",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "not an Indian city",
+   "text": "Average daily high in °F for Atlantis over the next 3 day(s).",
+   "inputs": {
+    "city": "Atlantis",
+    "days": 3
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P07-T01",
+   "spec_id": "P07",
+   "split": "heldout",
+   "hard": false,
+   "text": "How much warmer is Chennai than Delhi (avg daily max, °C) over the next 7 day(s)?",
+   "inputs": {
+    "city_a": "Chennai",
+    "city_b": "Delhi",
+    "days": 7
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 0.09,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T02",
+   "spec_id": "P07",
+   "split": "dev",
+   "hard": false,
+   "text": "How much warmer is Mumbai than Pune (avg daily max, °C) over the next 3 day(s)?",
+   "inputs": {
+    "city_a": "Mumbai",
+    "city_b": "Pune",
+    "days": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 4.6,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T03",
+   "spec_id": "P07",
+   "split": "heldout",
+   "hard": false,
+   "text": "How much warmer is Jaipur than Kolkata (avg daily max, °C) over the next 5 day(s)?",
+   "inputs": {
+    "city_a": "Jaipur",
+    "city_b": "Kolkata",
+    "days": 5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 0.16,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T04",
+   "spec_id": "P07",
+   "split": "dev",
+   "hard": false,
+   "text": "How much warmer is Bengaluru than Hyderabad (avg daily max, °C) over the next 10 day(s)?",
+   "inputs": {
+    "city_a": "Bengaluru",
+    "city_b": "Hyderabad",
+    "days": 10
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": -1.95,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T05",
+   "spec_id": "P07",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "ambiguous name (Kochi, Japan)",
+   "text": "How much warmer is Kochi than Chennai (avg daily max, °C) over the next 4 day(s)?",
+   "inputs": {
+    "city_a": "Kochi",
+    "city_b": "Chennai",
+    "days": 4
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 0.6,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T06",
+   "spec_id": "P07",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "same city (expect 0)",
+   "text": "How much warmer is Delhi than Delhi (avg daily max, °C) over the next 2 day(s)?",
+   "inputs": {
+    "city_a": "Delhi",
+    "city_b": "Delhi",
+    "days": 2
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 0,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T07",
+   "spec_id": "P07",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "invalid days",
+   "text": "How much warmer is Pune than Kolkata (avg daily max, °C) over the next 0 day(s)?",
+   "inputs": {
+    "city_a": "Pune",
+    "city_b": "Kolkata",
+    "days": 0
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P07-T08",
+   "spec_id": "P07",
+   "split": "heldout",
+   "hard": false,
+   "text": "How much warmer is Hyderabad than Mumbai (avg daily max, °C) over the next 6 day(s)?",
+   "inputs": {
+    "city_a": "Hyderabad",
+    "city_b": "Mumbai",
+    "days": 6
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": -6.27,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T09",
+   "spec_id": "P07",
+   "split": "dev",
+   "hard": false,
+   "text": "How much warmer is Kolkata than Bengaluru (avg daily max, °C) over the next 8 day(s)?",
+   "inputs": {
+    "city_a": "Kolkata",
+    "city_b": "Bengaluru",
+    "days": 8
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 2.34,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P07-T10",
+   "spec_id": "P07",
+   "split": "heldout",
+   "hard": false,
+   "text": "How much warmer is Pune than Jaipur (avg daily max, °C) over the next 2 day(s)?",
+   "inputs": {
+    "city_a": "Pune",
+    "city_b": "Jaipur",
+    "days": 2
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": -0.05,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "P08-T01",
+   "spec_id": "P08",
+   "split": "heldout",
+   "hard": false,
+   "text": "Total forecast rain in Mumbai over the next 7 day(s), in mm.",
+   "inputs": {
+    "city": "Mumbai",
+    "days": 7,
+    "unit": "mm"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 1.1,
+    "unit": "mm"
+   }
+  },
+  {
+   "id": "P08-T02",
+   "spec_id": "P08",
+   "split": "dev",
+   "hard": false,
+   "text": "Total forecast rain in Chennai over the next 10 day(s), in mm.",
+   "inputs": {
+    "city": "Chennai",
+    "days": 10,
+    "unit": "mm"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 82,
+    "unit": "mm"
+   }
+  },
+  {
+   "id": "P08-T03",
+   "spec_id": "P08",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "unit conversion to inches",
+   "text": "Total forecast rain in Kolkata over the next 5 day(s), in in.",
+   "inputs": {
+    "city": "Kolkata",
+    "days": 5,
+    "unit": "in"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 0.055,
+    "unit": "in"
+   }
+  },
+  {
+   "id": "P08-T04",
+   "spec_id": "P08",
+   "split": "dev",
+   "hard": false,
+   "text": "Total forecast rain in Bengaluru over the next 14 day(s), in mm.",
+   "inputs": {
+    "city": "Bengaluru",
+    "days": 14,
+    "unit": "mm"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 52.8,
+    "unit": "mm"
+   }
+  },
+  {
+   "id": "P08-T05",
+   "spec_id": "P08",
+   "split": "heldout",
+   "hard": false,
+   "text": "Total forecast rain in Pune over the next 3 day(s), in mm.",
+   "inputs": {
+    "city": "Pune",
+    "days": 3,
+    "unit": "mm"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 3.7,
+    "unit": "mm"
+   }
+  },
+  {
+   "id": "P08-T06",
+   "spec_id": "P08",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "ambiguous name (Kochi, Japan)",
+   "text": "Total forecast rain in Kochi over the next 7 day(s), in mm.",
+   "inputs": {
+    "city": "Kochi",
+    "days": 7,
+    "unit": "mm"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 54.6,
+    "unit": "mm"
+   }
+  },
+  {
+   "id": "P08-T07",
+   "spec_id": "P08",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "unsupported unit",
+   "text": "Total forecast rain in Delhi over the next 4 day(s), in cm.",
+   "inputs": {
+    "city": "Delhi",
+    "days": 4,
+    "unit": "cm"
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P08-T08",
+   "spec_id": "P08",
+   "split": "heldout",
+   "hard": false,
+   "text": "Total forecast rain in Hyderabad over the next 9 day(s), in in.",
+   "inputs": {
+    "city": "Hyderabad",
+    "days": 9,
+    "unit": "in"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 0.327,
+    "unit": "in"
+   }
+  },
+  {
+   "id": "P08-T09",
+   "spec_id": "P08",
+   "split": "dev",
+   "hard": false,
+   "text": "Total forecast rain in Jaipur over the next 6 day(s), in mm.",
+   "inputs": {
+    "city": "Jaipur",
+    "days": 6,
+    "unit": "mm"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 0,
+    "unit": "mm"
+   }
+  },
+  {
+   "id": "P08-T10",
+   "spec_id": "P08",
+   "split": "heldout",
+   "hard": false,
+   "text": "Total forecast rain in Chennai over the next 16 day(s), in in.",
+   "inputs": {
+    "city": "Chennai",
+    "days": 16,
+    "unit": "in"
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 4.699,
+    "unit": "in"
+   }
+  },
+  {
+   "id": "P09-T01",
+   "spec_id": "P09",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average nightly price in USD of hotels in Mumbai rated ≥ 3.5.",
+   "inputs": {
+    "city": "Mumbai",
+    "min_rating": 3.5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 103.04,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T02",
+   "spec_id": "P09",
+   "split": "dev",
+   "hard": false,
+   "text": "Average nightly price in USD of hotels in Pune rated ≥ 3.",
+   "inputs": {
+    "city": "Pune",
+    "min_rating": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 37.21,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T03",
+   "spec_id": "P09",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average nightly price in USD of hotels in Delhi rated ≥ 4.",
+   "inputs": {
+    "city": "Delhi",
+    "min_rating": 4
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 78.29,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T04",
+   "spec_id": "P09",
+   "split": "dev",
+   "hard": false,
+   "text": "Average nightly price in USD of hotels in Bengaluru rated ≥ 3.5.",
+   "inputs": {
+    "city": "Bengaluru",
+    "min_rating": 3.5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 72.58,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T05",
+   "spec_id": "P09",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "string prices",
+   "text": "Average nightly price in USD of hotels in Goa rated ≥ 3.",
+   "inputs": {
+    "city": "Goa",
+    "min_rating": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 53.56,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T06",
+   "spec_id": "P09",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "string prices",
+   "text": "Average nightly price in USD of hotels in Kochi rated ≥ 3.5.",
+   "inputs": {
+    "city": "Kochi",
+    "min_rating": 3.5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 64.25,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T07",
+   "spec_id": "P09",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "no hotel qualifies",
+   "text": "Average nightly price in USD of hotels in Chennai rated ≥ 4.95.",
+   "inputs": {
+    "city": "Chennai",
+    "min_rating": 4.95
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P09-T08",
+   "spec_id": "P09",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "flaky provider",
+   "text": "Average nightly price in USD of hotels in Jaipur rated ≥ 3.5.",
+   "inputs": {
+    "city": "Jaipur",
+    "min_rating": 3.5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 73.37,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T09",
+   "spec_id": "P09",
+   "split": "dev",
+   "hard": false,
+   "text": "Average nightly price in USD of hotels in Hyderabad rated ≥ 3.",
+   "inputs": {
+    "city": "Hyderabad",
+    "min_rating": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 59.77,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P09-T10",
+   "spec_id": "P09",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average nightly price in USD of hotels in Kolkata rated ≥ 4.",
+   "inputs": {
+    "city": "Kolkata",
+    "min_rating": 4
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 66.09,
+    "unit": "USD"
+   }
+  },
+  {
+   "id": "P10-T01",
+   "spec_id": "P10",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average PM2.5 in Delhi over the next 3 day(s).",
+   "inputs": {
+    "city": "Delhi",
+    "days": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 98.4,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T02",
+   "spec_id": "P10",
+   "split": "dev",
+   "hard": false,
+   "text": "Average PM2.5 in Mumbai over the next 5 day(s).",
+   "inputs": {
+    "city": "Mumbai",
+    "days": 5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 46.4,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T03",
+   "spec_id": "P10",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average PM2.5 in Pune over the next 2 day(s).",
+   "inputs": {
+    "city": "Pune",
+    "days": 2
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 26.95,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T04",
+   "spec_id": "P10",
+   "split": "dev",
+   "hard": false,
+   "text": "Average PM2.5 in Kolkata over the next 4 day(s).",
+   "inputs": {
+    "city": "Kolkata",
+    "days": 4
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 72.68,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T05",
+   "spec_id": "P10",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average PM2.5 in Chennai over the next 1 day(s).",
+   "inputs": {
+    "city": "Chennai",
+    "days": 1
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 6.1,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T06",
+   "spec_id": "P10",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "ambiguous name (Kochi, Japan)",
+   "text": "Average PM2.5 in Kochi over the next 3 day(s).",
+   "inputs": {
+    "city": "Kochi",
+    "days": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 28.53,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T07",
+   "spec_id": "P10",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "days beyond 5-day horizon",
+   "text": "Average PM2.5 in Bengaluru over the next 7 day(s).",
+   "inputs": {
+    "city": "Bengaluru",
+    "days": 7
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P10-T08",
+   "spec_id": "P10",
+   "split": "heldout",
+   "hard": false,
+   "text": "Average PM2.5 in Jaipur over the next 5 day(s).",
+   "inputs": {
+    "city": "Jaipur",
+    "days": 5
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 44.86,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T09",
+   "spec_id": "P10",
+   "split": "dev",
+   "hard": false,
+   "text": "Average PM2.5 in Hyderabad over the next 3 day(s).",
+   "inputs": {
+    "city": "Hyderabad",
+    "days": 3
+   },
+   "truth": {
+    "expected_status": "success",
+    "value": 10.97,
+    "unit": "ug/m3"
+   }
+  },
+  {
+   "id": "P10-T10",
+   "spec_id": "P10",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "not an Indian city",
+   "text": "Average PM2.5 in Springfield over the next 2 day(s).",
+   "inputs": {
+    "city": "Springfield",
+    "days": 2
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P11-T01",
+   "spec_id": "P11",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for alice, bob, carol between 2026-11-09 and 2026-11-13.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "bob",
+     "carol"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-09T00:00Z",
+    "window_end": "2026-11-13T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-09T03:30Z"
+   }
+  },
+  {
+   "id": "P11-T02",
+   "spec_id": "P11",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "all-day offsite entry",
+   "text": "90-min meeting for alice, frank between 2026-11-11 and 2026-11-11.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "frank"
+    ],
+    "duration_minutes": 90,
+    "window_start": "2026-11-11T00:00Z",
+    "window_end": "2026-11-11T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P11-T03",
+   "spec_id": "P11",
+   "split": "heldout",
+   "hard": false,
+   "text": "120-min meeting for bob, carol between 2026-11-16 and 2026-11-18.",
+   "inputs": {
+    "participants": [
+     "bob",
+     "carol"
+    ],
+    "duration_minutes": 120,
+    "window_start": "2026-11-16T00:00Z",
+    "window_end": "2026-11-18T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-18T09:00Z"
+   }
+  },
+  {
+   "id": "P11-T04",
+   "spec_id": "P11",
+   "split": "dev",
+   "hard": false,
+   "text": "60-min meeting for alice, bob, carol, frank between 2026-11-23 and 2026-11-25.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "bob",
+     "carol",
+     "frank"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-23T00:00Z",
+    "window_end": "2026-11-25T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-23T10:00Z"
+   }
+  },
+  {
+   "id": "P11-T05",
+   "spec_id": "P11",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "unknown participant",
+   "text": "60-min meeting for carol, zoe between 2026-11-10 and 2026-11-12.",
+   "inputs": {
+    "participants": [
+     "carol",
+     "zoe"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-10T00:00Z",
+    "window_end": "2026-11-12T23:59Z"
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P11-T06",
+   "spec_id": "P11",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for alice, dave between 2026-11-17 and 2026-11-19.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "dave"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-17T00:00Z",
+    "window_end": "2026-11-19T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-18T09:00Z"
+   }
+  },
+  {
+   "id": "P11-T07",
+   "spec_id": "P11",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "no working-hours overlap (infeasible)",
+   "text": "30-min meeting for bob, erin between 2026-11-17 and 2026-11-19.",
+   "inputs": {
+    "participants": [
+     "bob",
+     "erin"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-17T00:00Z",
+    "window_end": "2026-11-19T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P11-T08",
+   "spec_id": "P11",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for frank, carol between 2026-11-30 and 2026-11-30.",
+   "inputs": {
+    "participants": [
+     "frank",
+     "carol"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-30T00:00Z",
+    "window_end": "2026-11-30T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-30T03:30Z"
+   }
+  },
+  {
+   "id": "P11-T09",
+   "spec_id": "P11",
+   "split": "dev",
+   "hard": false,
+   "text": "45-min meeting for alice, bob between 2026-11-12 and 2026-11-12.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "bob"
+    ],
+    "duration_minutes": 45,
+    "window_start": "2026-11-12T00:00Z",
+    "window_end": "2026-11-12T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-12T03:30Z"
+   }
+  },
+  {
+   "id": "P11-T10",
+   "spec_id": "P11",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for heidi, dave between 2026-11-20 and 2026-11-20.",
+   "inputs": {
+    "participants": [
+     "heidi",
+     "dave"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-20T00:00Z",
+    "window_end": "2026-11-20T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-20T13:30Z"
+   }
+  },
+  {
+   "id": "P12-T01",
+   "spec_id": "P12",
+   "split": "heldout",
+   "hard": false,
+   "text": "30-min meeting for alice, dave between 2026-11-10 and 2026-11-12.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "dave"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-10T00:00Z",
+    "window_end": "2026-11-12T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-10T09:00Z"
+   }
+  },
+  {
+   "id": "P12-T02",
+   "spec_id": "P12",
+   "split": "dev",
+   "hard": false,
+   "text": "60-min meeting for dave, grace between 2026-11-16 and 2026-11-18.",
+   "inputs": {
+    "participants": [
+     "dave",
+     "grace"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-16T00:00Z",
+    "window_end": "2026-11-18T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-16T15:00Z"
+   }
+  },
+  {
+   "id": "P12-T03",
+   "spec_id": "P12",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for bob, heidi between 2026-11-23 and 2026-11-24.",
+   "inputs": {
+    "participants": [
+     "bob",
+     "heidi"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-23T00:00Z",
+    "window_end": "2026-11-24T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-23T09:00Z"
+   }
+  },
+  {
+   "id": "P12-T04",
+   "spec_id": "P12",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "no common working hours (infeasible)",
+   "text": "30-min meeting for alice, dave, erin between 2026-11-17 and 2026-11-20.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "dave",
+     "erin"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-17T00:00Z",
+    "window_end": "2026-11-20T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P12-T05",
+   "spec_id": "P12",
+   "split": "heldout",
+   "hard": false,
+   "text": "90-min meeting for heidi, erin between 2026-11-09 and 2026-11-11.",
+   "inputs": {
+    "participants": [
+     "heidi",
+     "erin"
+    ],
+    "duration_minutes": 90,
+    "window_start": "2026-11-09T00:00Z",
+    "window_end": "2026-11-11T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-09T14:00Z"
+   }
+  },
+  {
+   "id": "P12-T06",
+   "spec_id": "P12",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for carol, dave, heidi between 2026-11-12 and 2026-11-13.",
+   "inputs": {
+    "participants": [
+     "carol",
+     "dave",
+     "heidi"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-12T00:00Z",
+    "window_end": "2026-11-13T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-13T09:00Z"
+   }
+  },
+  {
+   "id": "P12-T07",
+   "spec_id": "P12",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "all-day offsite (infeasible day)",
+   "text": "60-min meeting for frank, dave between 2026-11-11 and 2026-11-11.",
+   "inputs": {
+    "participants": [
+     "frank",
+     "dave"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-11T00:00Z",
+    "window_end": "2026-11-11T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P12-T08",
+   "spec_id": "P12",
+   "split": "heldout",
+   "hard": false,
+   "text": "30-min meeting for grace, erin between 2026-11-27 and 2026-11-27.",
+   "inputs": {
+    "participants": [
+     "grace",
+     "erin"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-27T00:00Z",
+    "window_end": "2026-11-27T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-27T14:00Z"
+   }
+  },
+  {
+   "id": "P12-T09",
+   "spec_id": "P12",
+   "split": "dev",
+   "hard": false,
+   "text": "120-min meeting for alice, heidi between 2026-11-18 and 2026-11-19.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "heidi"
+    ],
+    "duration_minutes": 120,
+    "window_start": "2026-11-18T00:00Z",
+    "window_end": "2026-11-19T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-19T09:00Z"
+   }
+  },
+  {
+   "id": "P12-T10",
+   "spec_id": "P12",
+   "split": "heldout",
+   "hard": false,
+   "text": "30-min meeting for dave between 2026-11-30 and 2026-11-30.",
+   "inputs": {
+    "participants": [
+     "dave"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-30T00:00Z",
+    "window_end": "2026-11-30T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-30T09:00Z"
+   }
+  },
+  {
+   "id": "P13-T01",
+   "spec_id": "P13",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "Thanksgiving in window",
+   "text": "60-min meeting for erin, dave between 2026-11-25 and 2026-11-27.",
+   "inputs": {
+    "participants": [
+     "erin",
+     "dave"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-25T00:00Z",
+    "window_end": "2026-11-27T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-27T14:00Z"
+   }
+  },
+  {
+   "id": "P13-T02",
+   "spec_id": "P13",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "Veterans Day in window",
+   "text": "30-min meeting for grace, heidi between 2026-11-10 and 2026-11-12.",
+   "inputs": {
+    "participants": [
+     "grace",
+     "heidi"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-10T00:00Z",
+    "window_end": "2026-11-12T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-10T14:00Z"
+   }
+  },
+  {
+   "id": "P13-T03",
+   "spec_id": "P13",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for erin, grace between 2026-11-16 and 2026-11-18.",
+   "inputs": {
+    "participants": [
+     "erin",
+     "grace"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-16T00:00Z",
+    "window_end": "2026-11-18T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-16T15:00Z"
+   }
+  },
+  {
+   "id": "P13-T04",
+   "spec_id": "P13",
+   "split": "dev",
+   "hard": false,
+   "text": "30-min meeting for dave, erin, heidi between 2026-11-23 and 2026-11-25.",
+   "inputs": {
+    "participants": [
+     "dave",
+     "erin",
+     "heidi"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-23T00:00Z",
+    "window_end": "2026-11-25T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-23T14:00Z"
+   }
+  },
+  {
+   "id": "P13-T05",
+   "spec_id": "P13",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "only day is a holiday (infeasible)",
+   "text": "120-min meeting for grace between 2026-11-26 and 2026-11-26.",
+   "inputs": {
+    "participants": [
+     "grace"
+    ],
+    "duration_minutes": 120,
+    "window_start": "2026-11-26T00:00Z",
+    "window_end": "2026-11-26T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P13-T06",
+   "spec_id": "P13",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for erin, heidi between 2026-11-11 and 2026-11-13.",
+   "inputs": {
+    "participants": [
+     "erin",
+     "heidi"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-11T00:00Z",
+    "window_end": "2026-11-13T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-13T14:00Z"
+   }
+  },
+  {
+   "id": "P13-T07",
+   "spec_id": "P13",
+   "split": "heldout",
+   "hard": false,
+   "text": "90-min meeting for grace, dave between 2026-11-17 and 2026-11-19.",
+   "inputs": {
+    "participants": [
+     "grace",
+     "dave"
+    ],
+    "duration_minutes": 90,
+    "window_start": "2026-11-17T00:00Z",
+    "window_end": "2026-11-19T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-17T15:30Z"
+   }
+  },
+  {
+   "id": "P13-T08",
+   "spec_id": "P13",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "no common working hours",
+   "text": "30-min meeting for erin, alice between 2026-11-17 and 2026-11-18.",
+   "inputs": {
+    "participants": [
+     "erin",
+     "alice"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-17T00:00Z",
+    "window_end": "2026-11-18T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P13-T09",
+   "spec_id": "P13",
+   "split": "dev",
+   "hard": false,
+   "text": "60-min meeting for heidi, grace between 2026-11-30 and 2026-11-30.",
+   "inputs": {
+    "participants": [
+     "heidi",
+     "grace"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-30T00:00Z",
+    "window_end": "2026-11-30T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-30T15:00Z"
+   }
+  },
+  {
+   "id": "P13-T10",
+   "spec_id": "P13",
+   "split": "heldout",
+   "hard": false,
+   "text": "30-min meeting for dave, grace between 2026-11-09 and 2026-11-09.",
+   "inputs": {
+    "participants": [
+     "dave",
+     "grace"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-09T00:00Z",
+    "window_end": "2026-11-09T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-09T14:00Z"
+   }
+  },
+  {
+   "id": "P14-T01",
+   "spec_id": "P14",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "all-day offsite on first day",
+   "text": "45-min meeting for bob, frank between 2026-11-11 and 2026-11-13 (\"Sync\").",
+   "inputs": {
+    "participants": [
+     "bob",
+     "frank"
+    ],
+    "duration_minutes": 45,
+    "window_start": "2026-11-11T00:00Z",
+    "window_end": "2026-11-13T23:59Z",
+    "title": "Sync"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-12T03:30Z"
+   }
+  },
+  {
+   "id": "P14-T02",
+   "spec_id": "P14",
+   "split": "dev",
+   "hard": false,
+   "text": "30-min meeting for alice, carol between 2026-11-16 and 2026-11-17 (\"Design review\").",
+   "inputs": {
+    "participants": [
+     "alice",
+     "carol"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-16T00:00Z",
+    "window_end": "2026-11-17T23:59Z",
+    "title": "Design review"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-16T06:30Z"
+   }
+  },
+  {
+   "id": "P14-T03",
+   "spec_id": "P14",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for alice, dave between 2026-11-18 and 2026-11-20 (\"Roadmap\").",
+   "inputs": {
+    "participants": [
+     "alice",
+     "dave"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-18T00:00Z",
+    "window_end": "2026-11-20T23:59Z",
+    "title": "Roadmap"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-18T09:00Z"
+   }
+  },
+  {
+   "id": "P14-T04",
+   "spec_id": "P14",
+   "split": "dev",
+   "hard": false,
+   "text": "30-min meeting for bob, carol, heidi between 2026-11-23 and 2026-11-24.",
+   "inputs": {
+    "participants": [
+     "bob",
+     "carol",
+     "heidi"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-23T00:00Z",
+    "window_end": "2026-11-24T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-23T09:00Z"
+   }
+  },
+  {
+   "id": "P14-T05",
+   "spec_id": "P14",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "offsite day (infeasible)",
+   "text": "60-min meeting for frank between 2026-11-25 and 2026-11-25 (\"1:1\").",
+   "inputs": {
+    "participants": [
+     "frank"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-25T00:00Z",
+    "window_end": "2026-11-25T23:59Z",
+    "title": "1:1"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P14-T06",
+   "spec_id": "P14",
+   "split": "heldout",
+   "hard": false,
+   "text": "90-min meeting for carol, dave between 2026-11-09 and 2026-11-10 (\"Planning\").",
+   "inputs": {
+    "participants": [
+     "carol",
+     "dave"
+    ],
+    "duration_minutes": 90,
+    "window_start": "2026-11-09T00:00Z",
+    "window_end": "2026-11-10T23:59Z",
+    "title": "Planning"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-10T09:00Z"
+   }
+  },
+  {
+   "id": "P14-T07",
+   "spec_id": "P14",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for alice, bob between 2026-11-30 and 2026-11-30 (\"Retro\").",
+   "inputs": {
+    "participants": [
+     "alice",
+     "bob"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-30T00:00Z",
+    "window_end": "2026-11-30T23:59Z",
+    "title": "Retro"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-30T03:30Z"
+   }
+  },
+  {
+   "id": "P14-T08",
+   "spec_id": "P14",
+   "split": "heldout",
+   "hard": false,
+   "text": "45-min meeting for heidi, bob between 2026-11-12 and 2026-11-13 (\"Hiring\").",
+   "inputs": {
+    "participants": [
+     "heidi",
+     "bob"
+    ],
+    "duration_minutes": 45,
+    "window_start": "2026-11-12T00:00Z",
+    "window_end": "2026-11-13T23:59Z",
+    "title": "Hiring"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-13T09:00Z"
+   }
+  },
+  {
+   "id": "P14-T09",
+   "spec_id": "P14",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "unknown participant",
+   "text": "30-min meeting for carol, yuki between 2026-11-16 and 2026-11-16 (\"Intro\").",
+   "inputs": {
+    "participants": [
+     "carol",
+     "yuki"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-16T00:00Z",
+    "window_end": "2026-11-16T23:59Z",
+    "title": "Intro"
+   },
+   "truth": {
+    "expected_status": "invalid_input"
+   }
+  },
+  {
+   "id": "P14-T10",
+   "spec_id": "P14",
+   "split": "heldout",
+   "hard": false,
+   "text": "30-min meeting for dave, frank between 2026-11-19 and 2026-11-20.",
+   "inputs": {
+    "participants": [
+     "dave",
+     "frank"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-19T00:00Z",
+    "window_end": "2026-11-20T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-19T09:00Z"
+   }
+  },
+  {
+   "id": "P15-T01",
+   "spec_id": "P15",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for alice, carol, frank between 2026-11-16 and 2026-11-18.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "carol",
+     "frank"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-16T00:00Z",
+    "window_end": "2026-11-18T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-16T08:30Z"
+   }
+  },
+  {
+   "id": "P15-T02",
+   "spec_id": "P15",
+   "split": "dev",
+   "hard": false,
+   "text": "90-min meeting for bob, carol between 2026-11-09 and 2026-11-10.",
+   "inputs": {
+    "participants": [
+     "bob",
+     "carol"
+    ],
+    "duration_minutes": 90,
+    "window_start": "2026-11-09T00:00Z",
+    "window_end": "2026-11-10T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-09T03:30Z"
+   }
+  },
+  {
+   "id": "P15-T03",
+   "spec_id": "P15",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for alice, dave between 2026-11-12 and 2026-11-13.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "dave"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-12T00:00Z",
+    "window_end": "2026-11-13T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-13T10:00Z"
+   }
+  },
+  {
+   "id": "P15-T04",
+   "spec_id": "P15",
+   "split": "dev",
+   "hard": true,
+   "hard_reason": "offsite day (infeasible)",
+   "text": "120-min meeting for frank, bob between 2026-11-11 and 2026-11-11.",
+   "inputs": {
+    "participants": [
+     "frank",
+     "bob"
+    ],
+    "duration_minutes": 120,
+    "window_start": "2026-11-11T00:00Z",
+    "window_end": "2026-11-11T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P15-T05",
+   "spec_id": "P15",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for carol, heidi between 2026-11-23 and 2026-11-24.",
+   "inputs": {
+    "participants": [
+     "carol",
+     "heidi"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-23T00:00Z",
+    "window_end": "2026-11-24T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-23T09:00Z"
+   }
+  },
+  {
+   "id": "P15-T06",
+   "spec_id": "P15",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "long meeting vs lunch break",
+   "text": "180-min meeting for alice, bob, carol between 2026-11-19 and 2026-11-19.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "bob",
+     "carol"
+    ],
+    "duration_minutes": 180,
+    "window_start": "2026-11-19T00:00Z",
+    "window_end": "2026-11-19T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P15-T07",
+   "spec_id": "P15",
+   "split": "heldout",
+   "hard": false,
+   "text": "60-min meeting for dave, heidi between 2026-11-17 and 2026-11-17.",
+   "inputs": {
+    "participants": [
+     "dave",
+     "heidi"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-17T00:00Z",
+    "window_end": "2026-11-17T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-17T10:00Z"
+   }
+  },
+  {
+   "id": "P15-T08",
+   "spec_id": "P15",
+   "split": "heldout",
+   "hard": true,
+   "hard_reason": "no common working hours",
+   "text": "30-min meeting for alice, erin between 2026-11-18 and 2026-11-19.",
+   "inputs": {
+    "participants": [
+     "alice",
+     "erin"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-18T00:00Z",
+    "window_end": "2026-11-19T23:59Z"
+   },
+   "truth": {
+    "expected_status": "infeasible",
+    "earliest": null
+   }
+  },
+  {
+   "id": "P15-T09",
+   "spec_id": "P15",
+   "split": "dev",
+   "hard": false,
+   "text": "60-min meeting for bob, dave between 2026-11-26 and 2026-11-27.",
+   "inputs": {
+    "participants": [
+     "bob",
+     "dave"
+    ],
+    "duration_minutes": 60,
+    "window_start": "2026-11-26T00:00Z",
+    "window_end": "2026-11-27T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-26T09:30Z"
+   }
+  },
+  {
+   "id": "P15-T10",
+   "spec_id": "P15",
+   "split": "heldout",
+   "hard": false,
+   "text": "30-min meeting for carol, frank between 2026-11-30 and 2026-11-30.",
+   "inputs": {
+    "participants": [
+     "carol",
+     "frank"
+    ],
+    "duration_minutes": 30,
+    "window_start": "2026-11-30T00:00Z",
+    "window_end": "2026-11-30T23:59Z"
+   },
+   "truth": {
+    "expected_status": "success",
+    "earliest": "2026-11-30T03:30Z"
+   }
+  }
+ ]
+}

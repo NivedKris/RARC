@@ -1,0 +1,17 @@
+id,expected,got,ok
+crash-typeerror,E_CRASH,E_CRASH,true
+crash-throw,E_CRASH,E_CRASH,true
+timeout-loop,E_TIMEOUT,E_TIMEOUT,true
+timeout-hang,E_TIMEOUT,E_TIMEOUT,true
+resource-stack,E_RESOURCE,E_RESOURCE,true
+resource-calls,E_RESOURCE,E_RESOURCE,true
+net-fetch,E_NET_DENIED,E_NET_DENIED,true
+net-xhr,E_NET_DENIED,E_NET_DENIED,true
+tool-injected,E_TOOL,E_TOOL,true
+tool-unknown,E_TOOL,E_TOOL,true
+malformed-status,E_MALFORMED_OUTPUT,E_MALFORMED_OUTPUT,true
+malformed-answer,E_MALFORMED_OUTPUT,E_MALFORMED_OUTPUT,true
+contract-require,E_CONTRACT,E_CONTRACT,true
+contract-syntax,E_CONTRACT,E_CONTRACT,true
+confirm-book,E_CONFIRM_REQUIRED,E_CONFIRM_REQUIRED,true
+confirm-invite,E_CONFIRM_REQUIRED,E_CONFIRM_REQUIRED,true

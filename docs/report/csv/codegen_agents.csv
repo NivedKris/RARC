@@ -1,0 +1,46 @@
+agent_id,spec_id,variant,provider,model_id,prompt_version,code_hash,loc,contract_ok,load_ok,has_try_catch,has_empty_check,repairs,first_attempt_ok,violations,gen_latency_ms,tools,synthesized_tools
+P01-v1,P01,v1,gemini,gemini-3.5-flash,codegen-v3,147ca80c57d6,191,true,true,true,true,0,true,,23112,geocode_city search_hotels list_attractions,convert_currency
+P01-v2,P01,v2,gemini,gemini-3.5-flash-lite,codegen-v3,5c816d4cc38c,117,true,true,true,true,0,true,,3593,geocode_city search_hotels list_attractions,convert_currency
+P01-v3,P01,v3,groq,openai/gpt-oss-20b,codegen-v3,397b0f8e9de0,218,true,true,true,true,0,true,,7905,geocode_city search_hotels list_attractions,convert_currency
+P02-v1,P02,v1,gemini,gemini-3.5-flash,codegen-v3,5ba932c48159,224,true,true,true,true,0,true,,11802,search_flights search_hotels geocode_city,
+P02-v2,P02,v2,gemini,gemini-3.5-flash-lite,codegen-v3,7846c02392a2,126,true,true,true,true,0,true,,3479,search_flights search_hotels geocode_city,
+P02-v3,P02,v3,groq,openai/gpt-oss-20b,codegen-v3,4e61d086ecc5,146,true,true,true,true,0,true,,7672,search_flights search_hotels geocode_city,
+P03-v1,P03,v1,gemini,gemini-3.5-flash,codegen-v3,f86ceb28446b,201,true,true,true,true,0,true,,10681,geocode_city search_flights search_trains search_hotels,
+P03-v2,P03,v2,gemini,gemini-3.5-flash-lite,codegen-v3,2827e0c4676b,118,true,true,true,true,0,true,,2858,geocode_city search_flights search_trains search_hotels,
+P03-v3,P03,v3,groq,openai/gpt-oss-20b,codegen-v3,e48537a8d64e,176,true,true,true,true,0,true,,3849,geocode_city search_flights search_trains search_hotels,
+P04-v1,P04,v1,gemini,gemini-3.5-flash,codegen-v3,d9ef65dec3a6,164,true,true,true,false,0,true,,7425,search_restaurants,
+P04-v2,P04,v2,gemini,gemini-3.5-flash-lite,codegen-v3,ce057366296d,104,true,true,true,false,0,true,,2713,search_restaurants,
+P04-v3,P04,v3,groq,openai/gpt-oss-20b,codegen-v3,12debc334ab7,100,true,true,true,false,0,true,,10295,search_restaurants,
+P05-v1,P05,v1,gemini,gemini-3.5-flash,codegen-v3,97c8ff5c5307,190,true,true,true,true,0,true,,9845,geocode_city search_hotels search_restaurants list_attractions,
+P05-v2,P05,v2,gemini,gemini-3.5-flash-lite,codegen-v3,235bbf896078,130,true,true,true,true,0,true,,3487,geocode_city search_hotels search_restaurants list_attractions,
+P05-v3,P05,v3,gemini,gemini-3.5-flash-lite,codegen-v3,15901f169c71,162,true,true,true,true,0,true,,34285,geocode_city search_hotels search_restaurants list_attractions,
+P06-v1,P06,v1,gemini,gemini-3.5-flash,codegen-v3,f4d0c3faf9d7,193,true,true,true,true,0,true,,36661,weather_forecast geocode_city,
+P06-v2,P06,v2,gemini,gemini-3.5-flash-lite,codegen-v3,d44fce6ec208,149,true,true,true,true,0,true,,3290,weather_forecast geocode_city,
+P06-v3,P06,v3,groq,openai/gpt-oss-20b,codegen-v3,fc33b27bbd52,138,true,true,true,true,0,true,,16087,weather_forecast geocode_city,
+P07-v1,P07,v1,groq,openai/gpt-oss-120b,codegen-v3,8c466fe08d93,163,true,true,true,true,0,true,,15975,weather_forecast geocode_city,
+P07-v2,P07,v2,gemini,gemini-3.5-flash-lite,codegen-v3,d85a032ab248,128,true,true,true,true,0,true,,2960,weather_forecast geocode_city,
+P07-v3,P07,v3,gemini,gemini-3.5-flash-lite,codegen-v3,550c46b0b882,212,true,true,true,true,0,true,,51649,weather_forecast geocode_city,
+P08-v1,P08,v1,groq,openai/gpt-oss-120b,codegen-v3,e8febc4cf21c,177,true,true,true,true,0,true,,16311,weather_forecast geocode_city,
+P08-v2,P08,v2,gemini,gemini-3.5-flash-lite,codegen-v3,a4821c9ea52f,125,true,true,true,true,0,true,,2920,weather_forecast geocode_city,
+P08-v3,P08,v3,gemini,gemini-3.5-flash-lite,codegen-v3,cd12b17e60db,168,true,true,true,true,0,true,,61728,weather_forecast geocode_city,
+P09-v1,P09,v1,gemini,gemini-3.5-flash,codegen-v3,9df478a3111c,172,true,true,true,true,0,true,,10802,search_hotels geocode_city,convert_currency
+P09-v2,P09,v2,gemini,gemini-3.5-flash-lite,codegen-v3,ca02a21ae27e,133,true,true,true,true,0,true,,3229,search_hotels geocode_city,convert_currency
+P09-v3,P09,v3,groq,openai/gpt-oss-20b,codegen-v3,605d2fc3d251,161,true,true,true,true,0,true,,5690,search_hotels geocode_city,convert_currency
+P10-v1,P10,v1,gemini,gemini-3.5-flash,codegen-v3,e97f16f881d0,177,true,true,true,true,0,true,,7698,air_quality geocode_city,
+P10-v2,P10,v2,gemini,gemini-3.5-flash-lite,codegen-v3,3c152c26328f,115,true,true,true,true,0,true,,3133,air_quality geocode_city,
+P10-v3,P10,v3,groq,openai/gpt-oss-20b,codegen-v3,436a560dd163,155,true,true,true,true,0,true,,18463,air_quality geocode_city,
+P11-v1,P11,v1,gemini,gemini-3.5-flash,codegen-v3,34ecd618f21f,278,true,true,true,true,0,true,,17650,get_calendar get_person_profile,
+P11-v2,P11,v2,gemini,gemini-3.5-flash-lite,codegen-v3,63fad36257ee,210,false,true,true,true,2,false,touches the global object,16130,get_calendar get_person_profile,
+P11-v3,P11,v3,groq,openai/gpt-oss-20b,codegen-v3,fb49715b1875,179,true,true,true,false,0,true,,25243,get_calendar get_person_profile,
+P12-v1,P12,v1,gemini,gemini-3.5-flash,codegen-v3,cd4198422d3f,255,true,true,true,true,0,true,,27103,get_calendar get_person_profile send_invite,
+P12-v2,P12,v2,gemini,gemini-3.5-flash-lite,codegen-v3,ecc8c7207f0c,237,true,true,true,true,0,true,,1,get_calendar get_person_profile send_invite,
+P12-v3,P12,v3,groq,openai/gpt-oss-20b,codegen-v3,0dc5b8424183,254,true,true,true,true,1,false,,98864,get_calendar get_person_profile send_invite,
+P13-v1,P13,v1,groq,openai/gpt-oss-120b,codegen-v3,2fcbccf1415f,284,true,true,true,true,1,false,,34587,get_calendar get_person_profile send_invite,public_holidays
+P13-v2,P13,v2,gemini,gemini-3.5-flash-lite,codegen-v3,e1a1685ca14e,276,true,true,true,true,0,true,,8104,get_calendar get_person_profile send_invite,public_holidays
+P13-v3,P13,v3,gemini,gemini-3.5-flash-lite,codegen-v3,09abeccc7def,315,true,true,true,true,0,true,,63755,get_calendar get_person_profile send_invite,public_holidays
+P14-v1,P14,v1,groq,openai/gpt-oss-120b,codegen-v3,e2c3c5d2f0a4,299,true,true,true,true,0,true,,19396,send_invite get_calendar get_person_profile,
+P14-v2,P14,v2,gemini,gemini-3.5-flash-lite,codegen-v3,56ab68b73c70,195,true,true,true,true,0,true,,5030,send_invite get_calendar get_person_profile,
+P14-v3,P14,v3,groq,openai/gpt-oss-20b,codegen-v3,ba36df8ac9aa,156,true,true,true,true,0,true,,4101,send_invite get_calendar get_person_profile,
+P15-v1,P15,v1,groq,openai/gpt-oss-120b,codegen-v3,26aceb042a98,286,true,true,true,true,0,true,,28616,get_calendar get_person_profile,
+P15-v2,P15,v2,gemini,gemini-3.5-flash-lite,codegen-v3,61a525b92fe7,186,false,true,true,true,2,false,touches the global object,14400,get_calendar get_person_profile,
+P15-v3,P15,v3,groq,openai/gpt-oss-20b,codegen-v3,887dfc94481c,193,true,true,true,true,0,true,,21896,get_calendar get_person_profile,
