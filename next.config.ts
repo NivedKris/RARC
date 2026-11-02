@@ -6,13 +6,14 @@ const nextConfig: NextConfig = {
       "*.css": { loaders: ["@tailwindcss/turbopack"], as: "*.css" },
     },
   },
-  serverExternalPackages: ["quickjs-emscripten", "quickjs-emscripten-core", "@jitl/quickjs-wasmfile-release-sync"],
+  // The sandbox worker require()s QuickJS at runtime, which the bundler can't see, so the packages
+  // stay external and every file they need is traced into the serverless function explicitly.
+  serverExternalPackages: ["quickjs-emscripten", "quickjs-emscripten-core", "@jitl/quickjs-ffi-types", "@jitl/quickjs-wasmfile-release-sync"],
   outputFileTracingIncludes: {
     "/api/**": [
       "./node_modules/quickjs-emscripten/**",
       "./node_modules/quickjs-emscripten-core/**",
-      "./node_modules/quickjs-ffi-types/**",
-      "./node_modules/@jitl/quickjs-wasmfile-release-sync/**",
+      "./node_modules/@jitl/**",
       "./data/llm-cache.json",
       "./data/embeddings.json",
     ],
