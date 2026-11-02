@@ -319,14 +319,49 @@ function TaskPanel({ agent, spec, pilotId, mode, certScore }: { agent: any; spec
           {res.check && <span className={`badge ${res.check.success ? "badge-good" : "badge-bad"}`}><StatusIcon ok={res.check.success} size={12} /> checker {res.check.success ? "passed" : "failed"} · {Math.round(res.check.partial_score * 100)}%</span>}
           <span className="chip">{res.stats.calls} tool calls</span><span className="chip">{res.run.duration_ms} ms</span><span className="chip">today = {res.now}</span>
         </div>
-        {res.run.error_message && <div className="mt-2 text-xs" style={{ color: "var(--bad)" }}>{res.run.error_message}</div>}
-        {res.run.answer && <pre className="code mt-3 max-h-56">{JSON.stringify(res.run.answer, null, 2)}</pre>}
+        {res.run.error_message && !res.view && <div className="mt-2 text-xs" style={{ color: "var(--bad)" }}>{res.run.error_message}</div>}
+        {res.view && <ResultCard view={res.view} />}
+        {(res.run.answer || res.run.raw) && <RawJson value={res.run.answer ?? res.run.raw} open={!res.view} />}
         {res.run.raw?.success_indicators && Object.keys(res.run.raw.success_indicators).length > 0 && <div className="mt-2 text-xs faint">Indicators: {JSON.stringify(res.run.raw.success_indicators).slice(0, 300)}</div>}
         {res.check && <div className="mt-3 rounded-xl border p-3" style={{ borderColor: "var(--border)" }}><div className="field-label">Checker</div><ul className="space-y-1 text-[13px]">{res.check.checks.map((c: any) => <li key={c.name} className="flex items-start gap-2"><span className="mt-0.5"><StatusIcon ok={c.ok} size={13} /></span><span>{c.name}{c.detail ? <span className="faint"> ({c.detail})</span> : null}</span></li>)}</ul>
           <div className="mt-2 text-xs faint">Expected {res.check.expected_status}{res.truth?.value !== undefined && res.truth?.value !== null ? ` · truth ${res.truth.value} ${res.truth.unit}` : ""}{res.truth?.earliest ? ` · earliest ${res.truth.earliest}` : ""}{res.truth?.min_cost ? ` · cheapest plan ₹${res.truth.min_cost}` : ""}</div></div>}
         <div className="mt-4 flex gap-2"><input type="text" className="flex-1" aria-label="Flag note" placeholder="Something wrong? Flag this run with a note" value={flagNote} onChange={(e) => setFlagNote(e.target.value)} /><button className="btn" disabled={flagged} onClick={flag}><Flag size={14} /> {flagged ? "Flagged" : "Flag"}</button></div>
       </div>}
       {res?.error && <div className="mt-3 flex items-center gap-2 text-sm" style={{ color: "var(--bad)" }}><Alert size={16} />{res.error}</div>}
+    </div>
+  );
+}
+
+function ResultCard({ view }: { view: any }) {
+  const tone = { good: { bg: "var(--good-soft)", fg: "var(--good)", Icon: Check }, warn: { bg: "var(--warn-soft)", fg: "var(--warn)", Icon: Alert }, bad: { bg: "var(--bad-soft)", fg: "var(--bad)", Icon: X } }[view.tone as "good" | "warn" | "bad"];
+  return (
+    <div className="fade-in mt-4 overflow-hidden rounded-xl border" style={{ borderColor: "var(--border)" }}>
+      <div className="flex items-start gap-3 px-4 py-3.5" style={{ background: tone.bg }}>
+        <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white" style={{ color: tone.fg }}><tone.Icon size={15} /></span>
+        <div><div className="text-[17px] font-semibold tracking-tight">{view.headline}</div>{view.sub && <div className="mt-0.5 text-[13px] muted">{view.sub}</div>}</div>
+      </div>
+      {view.lines.length > 0 && <ul className="divide-y divide-[var(--grid)]">
+        {view.lines.map((l: any, i: number) => (
+          <li key={i} className="flex items-center gap-3 px-4 py-2.5">
+            <span className="badge badge-neutral w-[92px] justify-center">{l.label}</span>
+            <div className="min-w-0 flex-1"><div className="truncate text-sm font-medium" style={l.warn ? { color: "var(--bad)" } : undefined}>{l.title}</div>{l.detail && <div className="truncate text-xs faint">{l.detail}</div>}</div>
+            {l.amount && <div className="shrink-0 text-sm font-semibold tabular-nums">{l.amount}</div>}
+          </li>
+        ))}
+      </ul>}
+      {view.total && <div className="flex items-center justify-between border-t px-4 py-2.5 text-sm" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}><span className="font-medium muted">{view.total.label}</span><span className="text-base font-semibold tabular-nums">{view.total.amount}</span></div>}
+    </div>
+  );
+}
+
+function RawJson({ value, open: initial }: { value: any; open: boolean }) {
+  const [open, setOpen] = useState(initial);
+  return (
+    <div className="mt-3">
+      <button className="inline-flex items-center gap-1 text-xs faint hover:text-[var(--text-primary)]" onClick={() => setOpen(!open)}>
+        <Chevron size={12} style={{ transform: open ? "rotate(90deg)" : undefined, transition: "transform .15s" }} />{open ? "Hide" : "Show"} raw JSON returned by the agent
+      </button>
+      {open && <pre className="code mt-2 max-h-56">{JSON.stringify(value, null, 2)}</pre>}
     </div>
   );
 }

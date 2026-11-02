@@ -1,5 +1,6 @@
 import { execute } from "@/lib/runtime";
 import { checkTask } from "@/lib/checkers";
+import { presentAnswer } from "@/lib/present";
 import { ndjson, resolveSpec, trustedWrappers } from "@/lib/api";
 import { TOOLS } from "@/lib/tools";
 import tasksFile from "@/data/tasks.json";
@@ -15,6 +16,7 @@ export async function POST(req: Request) {
     send({ type: "start", inputs, mode, task_id: task?.id ?? null });
     const r = await execute(agent, inputs, { mode, confirmed: !!b.confirmed, text: task?.text ?? b.text, onStep: (s) => send({ type: "step", step: s }) });
     const check = task && mode === "replay" && b.spec?.pilot_id === task.spec_id ? checkTask(spec, inputs, task.truth, r.run) : null;
-    send({ type: "result", run: r.run, stats: r.stats, check, truth: task?.truth ?? null, now: r.now });
+    const view = presentAnswer(spec.category, b.spec?.pilot_id, inputs, r.run);
+    send({ type: "result", run: r.run, stats: r.stats, check, truth: task?.truth ?? null, now: r.now, view });
   });
 }
